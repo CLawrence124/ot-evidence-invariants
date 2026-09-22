@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ot-evidence-invariants"
+version = "0.1.0"
+description = "Bounded Open Targets evidence with deterministic scientific contracts"
+requires-python = ">=3.12"
+dependencies = ["pydantic==2.13.5", "httpx==0.28.1", "mcp==1.30.0", "anthropic==1.7.0", "jsonschema==4.26.0"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.scripts]
+ot-dossier = "ot_dossier.cli:main"
+ot-dossier-mcp = "ot_dossier.mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ot_dossier = ["api/queries/*.graphql"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

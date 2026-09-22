@@ -1,0 +1,2969 @@
+{
+  "format_version": 1,
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-09-19T01:19:58.751815+00:00",
+  "request": {
+    "query": "query Evidence($disease: String!, $targets: [String!]!, $size: Int!, $cursor: String) {\n  disease(efoId: $disease) {\n    id\n    evidences(ensemblIds: $targets, enableIndirect: true, size: $size, cursor: $cursor) {\n      count cursor rows {\n        id datasourceId datatypeId score target { id } disease { id name }\n        diseaseFromSource diseaseFromSourceId diseaseFromSourceMappedId\n        literature urls { url } studyId variantRsId\n        directionOnTarget directionOnTrait beta oddsRatio\n        clinicalStage clinicalReportId\n        drug { id name mechanismsOfAction { rows { mechanismOfAction actionType targets { id } } } }\n      }\n    }\n  }\n}\n",
+    "variables": {
+      "disease": "MONDO_0005265",
+      "targets": [
+        "ENSG00000167207"
+      ],
+      "size": 100,
+      "cursor": null
+    }
+  },
+  "response": {
+    "data": {
+      "disease": {
+        "id": "MONDO_0005265",
+        "evidences": {
+          "count": 4003,
+          "cursor": "eyJpbmRleCI6MSwic2l6ZSI6MTAwfQ==",
+          "rows": [
+            {
+              "id": "0cd2889d1ab28cf6d39b05678f38817a93fcc888",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs145293873",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0cefab8dcf486a8804720175bd35d205d8c49216",
+              "datasourceId": "genomics_england",
+              "datatypeId": "genetic_literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1, Crohn disease",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "25136265",
+                "21914217",
+                "25416713",
+                "26070941",
+                "19479837"
+              ],
+              "urls": [],
+              "studyId": "1075",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "11bc831c4e76aabab476ec945d244f361ff2fb59",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "15142196"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "11e1bad151bd6fc33c13066f9d96f90b32af17f1",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1463d0ab4aac4697dc26a42deabbe4e5919b8b6b",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895432",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "165dfb6147f689f6d0d9139c4d864e9174fc66ca",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895440",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "186f100a222d146fb6a22156ac8f1f1728576db2",
+              "datasourceId": "genomics_england",
+              "datatypeId": "genetic_literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1, Crohn disease",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "18955195",
+                "15459013",
+                "11528384",
+                "4056967"
+              ],
+              "urls": [],
+              "studyId": "111",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1e3ea5416d84c2b6ada0dad85ccd7d33eb645b4c",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895442",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "208b38dc45b951d0f046da310b9baca339e5e228",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs34684955",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "24cc27b8a7fc824b982a54d390ba4103abf11e60",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895429",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "27ae87560eecbbe0419eaefc2b7a58d8021f4fe4",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895423",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "28e03efbb1413a7e99776085a94f547c386e37e2",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895453",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2bbcffe5e1b459d183ccaee0992709937ee28ff1",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895439",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "37dd0e9f5f9cc2580cb842c02f79c8a460f9bad2",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33692434"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "39868e23c2fd9b94bc9b3878e73cb20d0b7147d0",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895425",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "3e07b7c9a9f13d10af728919cbb64aeab14d51d7",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "15024686",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895471",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "4048b7271a928b0cafcd637e178ce82f797c02a9",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895444",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "4a85e2599323a9bff0b5532e38f63baa2a7dca2c",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs62029861",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "4fc6ddb2f284a24706226479f11fe1e1ef166128",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895431",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "5087b071342013694e29eb2cb93ffb1f598d2d83",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "15024686"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895467",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "5928d60d2038bfb2a88ae0d9c6fcf2256ace2349",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "15024686",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895470",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "5ee758c3136cd12186c998a42315145c389cc9c1",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs61747625",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "64f82221bede013463657c8cd7aef96e7f0f876d",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895427",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "68f7e843427777c3725aadea5ed3a8db213f35c3",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895443",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "6990822fb0343a9c949ecf2bf3e1dc645c8f70b6",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs2076754",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "785209f81ce3cd286b98910b3ae9cf50e9421358",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895420",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "78b0b8ceafb7cb17a05830780b2e707039fb81c2",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895428",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "82777cbd2d05b1627119fc76c91e38723773b592",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "12514169",
+                "12626759",
+                "15198989",
+                "16485124",
+                "21914217",
+                "24790089",
+                "24960071",
+                "27812135"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs2066844",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "871537dcc6f3d70b9e3e1a940d025bf538ac64c0",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "15024686"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895468",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "879d141aad795d9d64fdd13b103d6d13757862d6",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs5743276",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "8edeb7b70d0114f3baa70be8d9c134779f4a6280",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs5743272",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "8fa81b0861166e32f1c04421331e118a4dde647f",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs3813758",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "92d9b75f6f91fc43f6e23459b250f33cc7454428",
+              "datasourceId": "gene_burden",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "20002#1462#crohns disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "34375979"
+              ],
+              "urls": [
+                {
+                  "url": "https://azphewas.com/phenotypeView/ba08a93f-501e-44e6-a332-98ce2f852279/3c20b6aa-e5d5-4347-9f26-2252d03757df/"
+                }
+              ],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": 2.9291000366210938,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "9ed7ea5d19b2b5b814b3ae5e51e8b1f5631d8947",
+              "datasourceId": "genomics_england",
+              "datatypeId": "genetic_literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1, Crohn disease",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "25136265",
+                "18955195",
+                "25416713",
+                "15459013",
+                "11528384",
+                "4056967",
+                "19479837",
+                "28887115"
+              ],
+              "urls": [],
+              "studyId": "398",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "a6cf72d8c7d0d52380fc908e79c29053db62d10d",
+              "datasourceId": "uniprot_literature",
+              "datatypeId": "genetic_literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "24960071",
+                "15998797",
+                "11385576",
+                "11385577",
+                "12514169",
+                "15044951",
+                "15198989",
+                "27812135",
+                "15024686",
+                "12626759",
+                "24790089",
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "a975bb332466c142147d501b349288d23eee387f",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11087742",
+                "11385576",
+                "12514169",
+                "15198989",
+                "16485124",
+                "24790089",
+                "26070941",
+                "27812135"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs2066845",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b00b09c7f2613a656f1fdbb4d08f7539685ccbdf",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "15459013"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895438",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b2163b83d1f06c4948054c951123e6299f2cdcc0",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs5743278",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b376d743fdf88b7fc05fe67a41da96011f33c543",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs5743277",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ba73d3c4559577ff73a56e7c3a3e946e2cefd3dd",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "15024686",
+                "24960071"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895469",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "bc3dae847fb72f1afc635e5745c07e0a9fe5a5a9",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895446",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "be2cc63cbc0662862420c3da7eaba5ababdacec6",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895445",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c1f298554e6a2eddd4d84d046a9f5e150a55d98d",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895422",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c24b5f90da1cd70c7fb5f30ff8c0e271b665f234",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "16485124"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895483",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c2e30e8fe87eca48fc4251d6a903f9cd2a30ce64",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "36189261"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d1aea8fa66949e3bf19f66b63a92d11853e10abd",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895424",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "dbfc32f5fe10f6995c6c5dfdd38d91531bbf1f4f",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576",
+                "12514169",
+                "12626759"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895447",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f28a78917d8f93bd562e1f49113264dc78a232c6",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385576"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": "rs104895426",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f603c1d1faa23cd32e462368177c88362599d80a",
+              "datasourceId": "uniprot_variants",
+              "datatypeId": "genetic_association",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "OMIM:266600",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [
+                "11385577",
+                "12514169",
+                "12626759",
+                "15198989",
+                "15998797"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ff7a849493eb76e1d2350dbc1050816b988f37a0",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "38510686"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "711547b0d1af1ffca6b9d061a9d53fe4e5f5e8b6",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.98,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "28819537"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "666bceab3e981b405a97ff3c8bc13e0ebd642c9b",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9287593364715576,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "28067908"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "aa966ea7b2550d16bd11a562eb5ad1d740c0a187",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9287593364715576,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "37156999"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "380eff248313b1b92e77296a96f198a0a1a361b9",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9205294251441956,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "28067908"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "64d8905af291148406d9f50b76df07a0f818e45a",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9205294251441956,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "37219871"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "9ad33d29d47beac2af536a8a072bea3f0e9c569a",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9205294251441956,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "39789286"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "295ddf16642756b1d896b15a961f0abbb308952c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001784395",
+              "variantRsId": "rs1264862631",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "32326113ea28345df8121ba40199a8877184e6b8",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512788",
+              "variantRsId": "rs104895477",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "32a94d18b13b5e379b316a91df3baf76070b7dfe",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003764528",
+              "variantRsId": "rs104895476",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "39c545e96809b0005cea9c4e79d80bcf97770cf1",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512785",
+              "variantRsId": "rs104895462",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "416b7fdac06a931b0d0a9d64a65b7a3db8d05c9f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512784",
+              "variantRsId": "rs104895461",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "55907b04df14fd7d97e02c94632391deff09a388",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002513872",
+              "variantRsId": "rs104895473",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "563fcfc61f5e101a6c7f7e21bb8446fa14545c8e",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512781",
+              "variantRsId": "rs2066847",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "7b3096456f7397f4d5fcc867b870834c78f46069",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003780084",
+              "variantRsId": "rs2506403400",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "97a23cf79ac15be4d3163b41d5a401667dd52986",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002513874",
+              "variantRsId": "rs104895475",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b4163940622a0e5b07ecfcf36169d9592da20343",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512783",
+              "variantRsId": "rs2066844",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "cedbb2a89ef496a7688f3e66602c57e3b56ccc81",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002514475",
+              "variantRsId": "rs104895479",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "dc54ecda421d5bc290e43bb43abb4c841f12dde3",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002513883",
+              "variantRsId": "rs104895467",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "e31608f3d6cfafe3456ef3d99dbe32dc62ed334f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002563634",
+              "variantRsId": "rs1964520477",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ed47d73bc65eb228a312f3616e9b8f9618e71ab6",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005222745",
+              "variantRsId": "rs104895494",
+              "directionOnTarget": null,
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f82b5c7bed7fa60291223b1fe43d56dbecba334b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002512782",
+              "variantRsId": "rs2066845",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "673da2f0010e87bb523d11903abd6d0d54620115",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.918274462223053,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37156999"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "6848202446b261159fa6589047a947e1bbe905ae",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.918274462223053,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "28067908"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f23b8981d5e1878adc629c537f279a6795d2da80",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.9053276181221008,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "41661118"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "8a03adb736e27ff707a8a5eb49d54a81a221975f",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8936522006988525,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "39789286"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "6b405609f20501ef34b68dc5c3ccf30c76ba247e",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.891543447971344,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "17554300"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "fc907d96a8ee009d60dba2aeb8e9ecef1dec9eeb",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.891273021697998,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "39024449"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2630232274a022e735c7a7bffb356546d9188f76",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8891525268554688,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33608531"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "893e6f0b7e2f388e73a78a60831b1d13f72735d4",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8891525268554688,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37965154"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "cea8c91fbc93ae2faa3dcb34d7b28873dc4cf944",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8891525268554688,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "39024449"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "fb9cbd0598a0622357f69f8cf4072878c8c7ca7d",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8891525268554688,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ae6995e8dcda7cc7c9ce21c309e3cece401bfa6f",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8866580724716187,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005539",
+                "name": "small bowel Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005539",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0fe4ef83c5cc8102c701d84f14f487628a08b4d0",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "26974007"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "10f9a0993be40c1fa8cbd3c87cd789b726d2e38d",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "23128233"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "6b605ca901bb156629350cacb48b847693f6fae3",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "9a706962d3c39304aec243e3991f951ad5170dbf",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c0401d9baf0893e49c529c327546cbf2a887f155",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33959723"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d0058c33e19b74db8da61af90682dbd42c3bdbf3",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "26974007"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d314abdb0d5dceaa6c10ddff5dd06b0396d4eb54",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005539",
+                "name": "small bowel Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005539",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "dfca1b2082dcfb4c0b137e9569a3299f976ae4ae",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "20570966"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f6c057288dce549d5b13da847d7e5e04d3b87649",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8861173391342163,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "18587394"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "9b9bf3c5454c98801501f25f3211180fed82ce7a",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8655810952186584,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "36653562"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "46ed7b605684b06122c63847efb5d83f8f91f17f",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8652319312095642,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "17435756"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "005386e3276d5ccedfbe2ff23aae3b5dd6cd83a7",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8589153289794922,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "37156999"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "16c3da6a967b87ceda73d68b36065c769b65f749",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8586903810501099,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "39024449"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "8d7e2dbdb01656237645e771dd6b1b52f7e6ad34",
+              "datasourceId": "gene_burden",
+              "datatypeId": "genetic_association",
+              "score": 0.8543866425524198,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "131627#Source of report of K50 crohns disease regional enteritis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "34375979"
+              ],
+              "urls": [
+                {
+                  "url": "https://azphewas.com/phenotypeView/ba08a93f-501e-44e6-a332-98ce2f852279/f2fe6f26-f161-4eea-9121-f99c90f181f4/"
+                }
+              ],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": 1.9431999921798706,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d162e77ad8e261d082cf4eedbc60c6ef73ce6316",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8500083088874817,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "22936669"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "efd56b73f6843726d2c642a22a3ce579d8cc23d6",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.8500083088874817,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "17068223"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d7faa4630921a5a73020a1443bf819ed11ef53a7",
+              "datasourceId": "gwas_credible_sets",
+              "datatypeId": "genetic_association",
+              "score": 0.846820056438446,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37377963"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "6c4f2e7133f019f1ec1445014602f4e7abbf24f3",
+              "datasourceId": "gene_burden",
+              "datatypeId": "genetic_association",
+              "score": 0.7900804946067099,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "union#K50#Crohn disease [regional enteritis]",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "34375979"
+              ],
+              "urls": [
+                {
+                  "url": "https://azphewas.com/phenotypeView/ba08a93f-501e-44e6-a332-98ce2f852279/66b29878-b2f8-4c63-8854-57cee255f216/"
+                }
+              ],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": 1.9050999879837036,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            }
+          ]
+        }
+      }
+    }
+  }
+}

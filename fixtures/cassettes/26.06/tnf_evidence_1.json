@@ -1,0 +1,3603 @@
+{
+  "format_version": 1,
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-09-19T01:20:04.273926+00:00",
+  "request": {
+    "query": "query Evidence($disease: String!, $targets: [String!]!, $size: Int!, $cursor: String) {\n  disease(efoId: $disease) {\n    id\n    evidences(ensemblIds: $targets, enableIndirect: true, size: $size, cursor: $cursor) {\n      count cursor rows {\n        id datasourceId datatypeId score target { id } disease { id name }\n        diseaseFromSource diseaseFromSourceId diseaseFromSourceMappedId\n        literature urls { url } studyId variantRsId\n        directionOnTarget directionOnTrait beta oddsRatio\n        clinicalStage clinicalReportId\n        drug { id name mechanismsOfAction { rows { mechanismOfAction actionType targets { id } } } }\n      }\n    }\n  }\n}\n",
+    "variables": {
+      "disease": "MONDO_0005265",
+      "targets": [
+        "ENSG00000232810"
+      ],
+      "size": 100,
+      "cursor": "eyJpbmRleCI6MSwic2l6ZSI6MTAwfQ=="
+    }
+  },
+  "response": {
+    "data": {
+      "disease": {
+        "id": "MONDO_0005265",
+        "evidences": {
+          "count": 20990,
+          "cursor": "eyJpbmRleCI6Miwic2l6ZSI6MTAwfQ==",
+          "rows": [
+            {
+              "id": "ba81286371748c3f072c5dacc4baa26a987771eb",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "de34bcb7-b524-45c8-9181-61c6f48d540e",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "bc07861e5c184ba5a70c97d9ab97a8085e4d3cf9",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "38310197"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "becd1b21e52498d46b12350f0091950707f34b93",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct06045754",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "bf9dcccf7956fbc6ac679bd040b7c010b7a8a4cd",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "40728886"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c1375fcd1a46ff48223a023bd86f72362a936340",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "colitis, ulcerative",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/005548",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "c388dffacaa19bb77eb29662e166eeb145deeb5e",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct01556672",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "c58a43a6315bf30435b6c41d6f14254a0d865ba1",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "colitis, ulcerative",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/005947",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "c827733ea7512db0a9977c03472a972f7fdc92ce",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct05906576",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "ca1a98c62d8967b56bdc39d25305bed66041e16a",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "colitis, ulcerative",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/004879",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "ca45c14a3dfb39f3807e7635e146a30b3338195d",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "colitis, ulcerative",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/004212",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "cde1a577b5decfd332918504b75d6af8257c7d9c",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04045782",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "ce70bc7ab2f341589fcdf990ad29c9c1c701c725",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "32860081"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ceb0888ccfa68bed2fd3186bc18d07ff6092527f",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct05813860",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "cef6583116ea2f9148785e990ce4952aefa0ec42",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "WITHDRAWAL",
+              "clinicalReportId": "emea/h/c/004373",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "cfa43de45ad39763d38df496d67944eb61c4349a",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "25524543",
+                "38319804"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct01817426",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "d13f7e6ea75a0c0d5f342049e2f5bc65cebd914e",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/005548",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "d283d4e6b0b3f77529d4ba5d5ee824778aa96894",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "35365535"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04835506",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "d45235ce64ef9c2ed7c8c046a1ac4f0bd1d62793",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "19756557",
+                "21330576",
+                "21741088",
+                "22344964",
+                "22357456",
+                "23299465",
+                "23735746",
+                "23770005",
+                "27440869",
+                ""
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct03669029",
+              "drug": {
+                "id": "CHEMBL1201833",
+                "name": "GOLIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "d5fd208ff4272cfee4966eeae8872344adc312af",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "18331642"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d761c63e4564d68594241f44e49418484d4ac69b",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/002576",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "da3dc7d5fc4de78d5957ed4c1e58ca75c10db2d2",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "b4c2c9dc-a0bb-4d64-a667-a67ebe88392d",
+              "drug": {
+                "id": "CHEMBL1201831",
+                "name": "CERTOLIZUMAB PEGOL",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "da7c3190570393150b345ffb2bc2179d4fb4a4a9",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct00462072",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "db89905677db73a68bb5f00fe2ff4a77fa76c586",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "35383266"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "dd0bca7db178c18c4103e37ae27fd4c0df64d41f",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "40357993"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct05928039",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "dd3be002b45ea220aa16f61650431e96334735fe",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "39586616"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct02425852",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "dda48acc19c1258e514684d3c666184e0a5669f5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "34732500"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04646187",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "ddf1329c69f8bbe47c2a0ce13d5b37ee35a8e298",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct07510191",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "de472b240903efcc0005cbb2abc17771700a5a9d",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "16472588",
+                "17241859",
+                "19664627",
+                "24831559",
+                "31194979",
+                "31793630",
+                "32324651"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct02256462",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "df2d49cc6a319d4a851f35882cdce9ca601b9894",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "34177575"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "df76ba1e4275d65f30e99735b0f47a492dcb24d5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "colitis, ulcerative",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/004320",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e0e94b4ad78a7f251bebd4bc9f5ffc31a3b5e2e5",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37629636"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "e22a6ac32998a5c4103d047cfb48af719030352f",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "34732500"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04646187",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e2fba90fec96d4fe6d0d6bdabcaf3343d1116ebc",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct01752790",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e3423c591472eeaa0fdc7ea3a6c7af3126b58b1c",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "10562322"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "e3b90d7cf4a333a93bf505908256dd2bce2e14f5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04131322",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e79df05b8052e077cdf99aac9862fccff345e70b",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "32506695"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct03124121",
+              "drug": {
+                "id": "CHEMBL1201833",
+                "name": "GOLIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e83e62bf380261f7768c680c6a88dae427bbcf35",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "de34bcb7-b524-45c8-9181-61c6f48d540e",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "e8a948fd1bf2310652bf1c8e74a7ecfc29643f81",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04131322",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "eaff53c96b48383e4e616b0f19797056d5f0041a",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35801760"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ecc2d6c5f71d394eda847eaf8f4e1685d2d3e9f5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn \u2019 s disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "7cdafee42fef7a8ffe6489c7abdd61904305ee0e6c3b6ba2ddfeb5a5d8eabb49",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "ecfa7d66bf5e057adbf3458f0c2c77deabc04436",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "25653489"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ee575fb423796911afb461a0d48d0835cd34c555",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "40013523"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct03151525",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "efbe5f286bfb38a5a9e689c412bb29a1aca0c0af",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct04775732",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "f018f6c288a649e44c5f391ebacdd624c10588f8",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct00972218",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "f70c62c4d193e43fe5d5db1094738cd747e45e1d",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "32967523"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f8853350a424d70fdacbfec02fbb3a785bb050e5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "WITHDRAWAL",
+              "clinicalReportId": "emea/h/c/005158",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "f8d5ab574b9aaee32242f8387c4aa5229ff4afdc",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37546508"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f98958b6dbe1ee0e924fd69f0bd5beda35d36694",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "93b7f074c6a141f23c4415c6e73610999cdc266aab662667f1301ce33fdcbfd8",
+              "drug": {
+                "id": "CHEMBL1201833",
+                "name": "GOLIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "f9db17b76f8c86024ef261d815ec044793a909e5",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "28090335",
+                "33384335",
+                "36934327",
+                "38644588"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_4",
+              "clinicalReportId": "nct02517684",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "fd3964bf151cbce7f0a89c970792d1014eef4103",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "emea/h/c/004020",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "fe72a6b22c718e93cd3e1ccb76cd1a846c358582",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 1,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn ' s disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "APPROVAL",
+              "clinicalReportId": "a5d4168460ecefd83cc5ec0781f3c4ee8afc18a3284cbf2ab035d52a1b45bf32",
+              "drug": {
+                "id": "CHEMBL1201580",
+                "name": "ADALIMUMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "45782bbffcd74e51a92e9aa056472663a60b1a1b",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.98,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "39092170"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b2c9262283fbaed6613823c6d06318c0b354d2de",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.98,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "40705352"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "5fd23eee600299ed21dc3d65f117d2752774a2ea",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.97,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37621757"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "9fab1aee03b0865c463bbd379ad4153f39b23228",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.96,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37203220"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "3a3dc88e9b8b2f81bf127ecae0dc7356a838a00b",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.95,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "40564117"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "50e90f6ed6e15f1a72c5b9e8f1fc3a0f835a0536",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.94,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "30511938"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "48c7256352762f0c69f49efcc037bf013cd1604f",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.93,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33029199"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "18c6f743cebc133ed30e7b51aebf08a2bb2a49db",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.92,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35776552"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f415a0a989e48a1724b015b529a3732d9b796783",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.91,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "31814801"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "613a41963664c112d2c1a23b9af6dbac14d6cab5",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.89,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "31126015"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "885bd9a738a77c196ca8ad6b7e767985c4562e78",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.89,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33747126"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "022fbc48638ae95c289d18fb863eccae4140d970",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.88,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "39176394"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ddcb6cb3791489c6de83b2d70315275ff8ef2789",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.88,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "34717923"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "11a6ead106a9050ec43844a237617bf565afcfb5",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.87,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "22675442"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "49c401e54745471bb3c9f38623cc079442297f1d",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.87,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37515078"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "a42ee3ac2f34fcd9e35262572f294d9266dcaf32",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.87,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33114187"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "7a503a9f82e42636ff59e3506ae79703805a0b30",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.85,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33767028"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "005b67f524d21ade6c514097e9841c64f2c9fe01",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.84,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "34670529"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "044f2e7b32da76b7557594a43ba0f7a7ea47d135",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.84,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "38625700"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "111eb55df5a74b3adcf0ca483fff5372c8818253",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.84,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35091460"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "598c359a361dbbbf95e7ef2cfad3ae22a9facc96",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.84,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35120446"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "915884065a244a5d92b73853a3fe8ef464bcb18c",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.83,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "41497534"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "082499f8bb933ae4d66dcb87530633a5edb38020",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.82,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35383266"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "b7b0222465f5d1aafaf911fecec65b29d86946c7",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.82,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "40095484"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0e5207473c0cd0692422ab1775d02e7e8cfdcb69",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 0.8,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "crohn disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PREAPPROVAL",
+              "clinicalReportId": "d0cu1t/crohn disease",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "42fdc873baaf09b2ffca2247deb8bbef3c52265d",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.8,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "39741232"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "4ce9a2e4b71e99566e3e9acfed480ff20a463f01",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.8,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "40733650"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "614e6d29ed20d591edb8f2851f93ef9b289e3cdb",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 0.8,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PREAPPROVAL",
+              "clinicalReportId": "d0cu1t/ulcerative colitis",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "435e6dc05d6122e728afbf551e221e2fcca9b8ce",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.78,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "36178685"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c34ccfd0169cd91c88550f32c635f02e45d30a6b",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.77,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "25775453"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f4f0ee28e61aceb501317902446e256680d14be3",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.77,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "28796256"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "bbeaa6d5716debd5e54d0dfb4794a49bc67de89f",
+              "datasourceId": "impc",
+              "datatypeId": "animal_model",
+              "score": 0.7648,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0054849",
+                "name": "inflammatory bowel disease 29"
+              },
+              "diseaseFromSource": "Inflammatory Bowel Disease 29",
+              "diseaseFromSourceId": "OMIM:618077",
+              "diseaseFromSourceMappedId": "MONDO_0054849",
+              "literature": [
+                "33210082",
+                "21804564",
+                "23977323",
+                "16287858",
+                "29618659",
+                "15366373",
+                "10204494",
+                "12486099",
+                "18250468",
+                "18854186",
+                "12727921",
+                "23977107",
+                "18439426",
+                "18250193",
+                "26195802",
+                "15334086"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "risk",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "36bb5151b0373d949a6b9cb540a853d99fa3ecce",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.76,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "31562607"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "7414c9f4e92768559882d2fcc5bf1edb01cceeb2",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.76,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "27539446"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "efd5c21e0c4d95cfd15a333bab9f63ffb3c7b457",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.76,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "22848611"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2127fff63042cf10fe4b9da43d2786d16ff742ee",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.75,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "29669006"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "a3f276325b143d64030569db6d7d8b5318b90cf8",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.75,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "38655181"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c5903869e3e3c879a85d390ef601e17bc1a8c764",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.75,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "36675312"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "c9a01b4faf8570085120aba80ec79b046ccd6647",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.75,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "36992175"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "f65f7895774d9585de6c24823737bc27ea69df09",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.75,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "33862588"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "45f048ffc377b5d011e6595c24ae6e75870493c8",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.73,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "30450023"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "4d94a9a0f21ec1bd3f58e97934e4a77ede88eea9",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.73,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "36840779"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "be1257cb836eed368791f4a5735198db4b64a8a3",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.73,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35428806"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2f3de815260870330d606018dc6afe71980ee476",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.72,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "35663996"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "d62b29143d289747cd01fbc1452b7a2ce7294355",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.72,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005292",
+                "name": "colitis"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005292",
+              "literature": [
+                "34511110"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "ef77c267c4b04855c1d48e9ec2a3284c56c77757",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.72,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "37643009"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "044d4034660469c9e487f12f48cb30eeeeca1d73",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 0.7,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_3",
+              "clinicalReportId": "nct00354367",
+              "drug": {
+                "id": "CHEMBL1201831",
+                "name": "CERTOLIZUMAB PEGOL",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "04796db2308ea853a7314556b7b82db8d1c5ea7d",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 0.7,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005101",
+                "name": "ulcerative colitis"
+              },
+              "diseaseFromSource": "ulcerative colitis",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005101",
+              "literature": [
+                "40013523"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_3",
+              "clinicalReportId": "nct00984568",
+              "drug": {
+                "id": "CHEMBL1201581",
+                "name": "INFLIXIMAB",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "06d5bf7998c564eee1acc352d46ea9d799d49a88",
+              "datasourceId": "clinical_precedence",
+              "datatypeId": "clinical",
+              "score": 0.7,
+              "target": {
+                "id": "ENSG00000232810"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Crohn's disease",
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": "LoF",
+              "directionOnTrait": "protect",
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": "PHASE_3",
+              "clinicalReportId": "nct00307931",
+              "drug": {
+                "id": "CHEMBL1201831",
+                "name": "CERTOLIZUMAB PEGOL",
+                "mechanismsOfAction": {
+                  "rows": [
+                    {
+                      "mechanismOfAction": "TNF-alpha inhibitor",
+                      "actionType": "INHIBITOR",
+                      "targets": [
+                        {
+                          "id": "ENSG00000232810"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

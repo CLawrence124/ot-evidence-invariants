@@ -1,0 +1,192 @@
+{
+  "case": "NOD2\u2013IBD",
+  "preparation": "AI-assisted preparation; human source review with recorded notes",
+  "review_status": "completed_human_source_review",
+  "reviewer": "Chris Lawrence, RN",
+  "reviewed_at": null,
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "The captured entity query identifies NOD2 as ENSG00000167207 and selected IBD as MONDO_0005265; legacy EFO_0003767 returns null.",
+      "checks": [
+        {
+          "cassette": "entities.json",
+          "pointer": "/data/nod2/id",
+          "expected": "ENSG00000167207"
+        },
+        {
+          "cassette": "entities.json",
+          "pointer": "/data/disease/id",
+          "expected": "MONDO_0005265"
+        },
+        {
+          "cassette": "entities.json",
+          "pointer": "/data/legacy",
+          "expected": null
+        }
+      ],
+      "human_verdict": "pass",
+      "reviewer_notes": "The frozen response.data shows nod2.id = ENSG00000167207, disease.id = MONDO_0005265, and legacy = null. This matches the intended entities and confirms the null legacy lookup is a real empty response rather than a hidden value in the request query."
+    },
+    {
+      "id": "F2",
+      "statement": "Crohn disease MONDO_0005011 is in the frozen IBD descendant set, so its records are indirect for selected IBD.",
+      "checks": [
+        {
+          "cassette": "entities.json",
+          "pointer": "/data/disease/descendants",
+          "operation": "contains",
+          "expected": "MONDO_0005011"
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/disease/id",
+          "expected": "MONDO_0005011"
+        }
+      ],
+      "human_verdict": "pass",
+      "reviewer_notes": "The selected disease is MONDO_0005265, and the descendant list includes MONDO_0005011. The specific evidence row at index 32 has disease.id = MONDO_0005011 and disease.name = Crohn disease, which confirms the row is a descendant of the selected IBD ontology term rather than a direct label for the selected parent disease."
+    },
+    {
+      "id": "F3",
+      "statement": "NOD2 evidence reports 4,003 matching rows; only three pages of 100 rows each are frozen, so retrieval is truncated.",
+      "checks": [
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/count",
+          "expected": 4003
+        },
+        {
+          "cassette": "nod2_evidence_1.json",
+          "pointer": "/data/disease/evidences/count",
+          "expected": 4003
+        },
+        {
+          "cassette": "nod2_evidence_2.json",
+          "pointer": "/data/disease/evidences/count",
+          "expected": 4003
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows",
+          "operation": "length",
+          "expected": 100
+        },
+        {
+          "cassette": "nod2_evidence_1.json",
+          "pointer": "/data/disease/evidences/rows",
+          "operation": "length",
+          "expected": 100
+        },
+        {
+          "cassette": "nod2_evidence_2.json",
+          "pointer": "/data/disease/evidences/rows",
+          "operation": "length",
+          "expected": 100
+        }
+      ],
+      "human_verdict": "pass",
+      "reviewer_notes": "Each frozen page contains 100 rows, and each page reports count = 4003, so the source query found 4003 matches but only 300 rows were captured. This is a classic truncation boundary and means the sample is not exhaustive, even though the count is a total match count."
+    },
+    {
+      "id": "F4",
+      "statement": "Captured gene-burden record 92d9b75f6f91fc43f6e23459b250f33cc7454428 reports LoF on target, risk on trait, and odds ratio 2.9291000366210938 for Crohn disease; this is a source-field observation, not an independently verified causal interpretation.",
+      "checks": [
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/id",
+          "expected": "92d9b75f6f91fc43f6e23459b250f33cc7454428"
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/datasourceId",
+          "expected": "gene_burden"
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/directionOnTarget",
+          "expected": "LoF"
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/directionOnTrait",
+          "expected": "risk"
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/oddsRatio",
+          "expected": 2.9291000366210938
+        },
+        {
+          "cassette": "nod2_evidence_0.json",
+          "pointer": "/data/disease/evidences/rows/32/literature",
+          "expected": [
+            "34375979"
+          ]
+        }
+      ],
+      "human_verdict": "pass",
+      "reviewer_notes": "The exact record at rows[32] has id 92d9b75f6f91fc43f6e23459b250f33cc7454428, datasourceId gene_burden, directionOnTarget LoF, directionOnTrait risk, oddsRatio 2.9291000366210938, and literature [\"34375979\"]. The statement matches the raw source fields, and it explicitly stays in the realm of source observation rather than claiming a causal or clinical conclusion."
+    },
+    {
+      "id": "F5",
+      "statement": "The NOD2 target annotation returned an empty safetyLiabilities list without GraphQL errors. This establishes only an empty response from that query, not safety.",
+      "checks": [
+        {
+          "cassette": "nod2_context.json",
+          "pointer": "/data/target/safetyLiabilities",
+          "expected": []
+        }
+      ],
+      "human_verdict": "pass",
+      "reviewer_notes": "The target context response has safetyLiabilities as an empty array and no GraphQL errors, so the query succeeded but returned no curated safety liabilities. That supports only an empty response from this dataset, not a statement that NOD2 is safe."
+    }
+  ],
+  "prohibited_inferences": [
+    {
+      "id": "P1",
+      "statement": "Crohn-only evidence is direct evidence for the selected IBD term.",
+      "reason": "Ontology descendants remain indirect for the selected parent.",
+      "human_verdict": "pass",
+      "reviewer_notes": "This should be prohibited. The descendant list includes Crohn disease, and the evidence row names Crohn disease while the selected disease is MONDO_0005265; the row is a descendant relation, not direct evidence for the selected parent term."
+    },
+    {
+      "id": "P2",
+      "statement": "Source-reported approval for another indication or an IBD subtype establishes approval for selected IBD or every subtype.",
+      "reason": "Stage stays with the exact source indication; ontology ancestry does not broaden approval.",
+      "human_verdict": "pass",
+      "reviewer_notes": "This is an overreach. The source fields do not establish approval status for the selected disease or for all subtypes; the cited evidence remains bounded to the exact disease and source context."
+    },
+    {
+      "id": "P3",
+      "statement": "NOD2 is safe because no safety liabilities were returned.",
+      "reason": "Empty curated annotation does not establish safety.",
+      "human_verdict": "pass",
+      "reviewer_notes": "This inference should be prohibited because an empty safetyLiabilities list is an empty result, not evidence of absence. A successful empty query does not establish safety and should not be treated as a safety conclusion."
+    },
+    {
+      "id": "P4",
+      "statement": "A high score proves causal validation or a high probability of therapeutic success; LoF/risk determines the right drug intervention.",
+      "reason": "These require scientific interpretation beyond the captured fields.",
+      "human_verdict": "pass",
+      "reviewer_notes": "This should be prohibited. The raw record gives source fields only\u2014LoF, risk, odds ratio, literature\u2014and does not establish causal validation, therapeutic probability, or an intervention choice. Those are downstream scientific judgments."
+    },
+    {
+      "id": "P5",
+      "statement": "The captured evidence is exhaustive, zero captured clinical rows means no drugs exist, or 300 rows means 300 independent replications.",
+      "reason": "Capture is bounded; evidence can overlap and query scope limits absence claims.",
+      "human_verdict": "pass",
+      "reviewer_notes": "This inference should be prohibited because the capture is truncated and not exhaustive. Three pages of 100 rows do not establish absence of clinical evidence or independent replication; they only show the captured sample boundary."
+    }
+  ],
+  "review_metadata_reconciliation": {
+    "recorded_at": "2026-09-22",
+    "basis": "Source-review confirmations recorded in the project conversation and per-item human_verdict/reviewer_notes. Exact original source-review date was not reliably established, so reviewed_at is null. This is not publication-level validation or the separate dossier sign-off.",
+    "previous_metadata": {
+      "preparation": "AI-assisted inspection of raw frozen fields; not independent human verification",
+      "review_status": "pending_human_verification",
+      "reviewer": "AI-assisted review",
+      "reviewed_at": "2026-09-18T19:02:00Z"
+    }
+  }
+}

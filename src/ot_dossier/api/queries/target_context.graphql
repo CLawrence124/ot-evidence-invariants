@@ -1,0 +1,13 @@
+query Context($target: String!) {
+  target(ensemblId: $target) {
+    id approvedSymbol
+    functionDescriptions
+    tractability { label modality value }
+    safetyLiabilities {
+      datasource event eventId url literature
+      effects { direction dosing }
+      biosamples { tissueLabel tissueId cellLabel cellId cellFormat }
+      studies { name type description }
+    }
+  }
+}

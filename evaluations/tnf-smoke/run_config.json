@@ -1,0 +1,18 @@
+{
+  "mode": "simulated",
+  "model_id": "scripted-v1/happy",
+  "target": "TNF",
+  "disease": "IBD",
+  "limits": {
+    "max_tool_calls": 8,
+    "max_repairs": 2,
+    "max_turns": 12,
+    "timeout_seconds": 30,
+    "model_timeout_seconds": 30
+  },
+  "prompt_sha256": "22330beb46a1bc57125ee58c9123df7cf4bd5fe50d22364f3d857018dd182328",
+  "skill_sha256": "e895b4e058a51a9f6ab8b324d264b03dc8611d0e732a2634c18ee6fdec49a352",
+  "validator_version": "0.2.1-citation-repair-hints",
+  "renderer_version": "0.2-explicit-section-totals",
+  "dossier_schema_sha256": "9042d52fbf01b37a6a52e52861899fab0afb0cf6bd802add9c6dbda2c24b5a0a"
+}

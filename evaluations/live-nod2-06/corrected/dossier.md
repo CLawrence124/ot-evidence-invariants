@@ -1,0 +1,92 @@
+# NOD2–IBD corrected dossier
+
+**ASSISTANT-EDITED DERIVATIVE — based on live-nod2-06 and human review findings. Corrected wording and disclosed coverage limits signed off by Chris Lawrence, RN on 2026-09-22. No new model generation was run.**
+
+Original generation model: `claude-sonnet-4-6`. Packet: `packet_42151cbc97e89bc94e9812a821396b40ab21ec89f176cff98bb5e90c5f1277de`.
+
+## Captured evidence and limits
+
+- evidence: truncated; 300 records returned; total 4003; interpretation unavailable.
+  Scope: Selected disease plus frozen descendants; bounded evidence pages.
+  Retrieval detail: Stopped at configured snapshot bound: 3 pages; 300 of 4003 rows.
+  Coverage is incomplete; absence conclusions are not supported.
+  Metadata source: `packet.json#/sections/evidence` (host-rendered; not an individual evidence record).
+- clinical: truncated; 0 records returned; total unknown; interpretation unavailable.
+  Scope: Drug-bearing rows within the scoped evidence query; not all target drugs or indications.
+  Underlying evidence capture limit: Stopped at configured snapshot bound: 3 pages; 300 of 4003 rows.
+  Returned counts drug-bearing records extracted from the captured evidence, not all drugs or indications; the evidence-query total is not a clinical-record total.
+  Coverage is incomplete; absence conclusions are not supported.
+  Metadata source: `packet.json#/sections/clinical` (host-rendered; not an individual evidence record).
+- safety: complete_empty; 0 records returned; total 0; interpretation unknown.
+  Scope: Target-level annotation; not IBD-specific or a comprehensive safety assessment.
+  No curated records returned under this retrieval; no negative or safety conclusion follows.
+  Metadata source: `packet.json#/sections/safety` (host-rendered; not an individual evidence record).
+- tractability: complete; 28 records returned; total 28; interpretation not_assessed.
+  Scope: Target-level annotation; not IBD-specific or a comprehensive safety assessment.
+  Records retrieved; scientific interpretation requires review.
+  Metadata source: `packet.json#/sections/tractability` (host-rendered; not an individual evidence record).
+- function: complete; 3 records returned; total 3; interpretation not_assessed.
+  Scope: Target-level annotation; not IBD-specific or a comprehensive safety assessment.
+  Records retrieved; scientific interpretation requires review.
+  Metadata source: `packet.json#/sections/function` (host-rendered; not an individual evidence record).
+
+Record counts are not independent replications. Association scores are not therapeutic success probabilities.
+
+## Corrected claims
+
+- **C001** — Direct genetic association evidence for NOD2 and inflammatory bowel disease (MONDO_0005265) is reported from GWAS credible sets, with scores ranging from approximately 0.32 to 0.92 in the captured records.
+  - [rec_024edd59be3d740248626f8e810da8cecc6935cd1eb073291e21aaa612a72f8d](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/97`; scope `direct`.
+  - [rec_17f7aaf976153363d353427cb9c4a24e31dd3b62bbd927560662dac0cddcaa24](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/78`; scope `direct`.
+  - [rec_22591d082add5b81c87e64c3fbf49785a4f6b3ea2c8d965a19c97fe487841de5](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/92`; scope `direct`.
+  - [rec_44cdd8001cc0300ee679b2f46f997f366cdb974bea4109b3ddce3a9cd4c79d35](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/77`; scope `direct`.
+  - [rec_49c5c166fa4a0d3800589ffedc53c0e3c435f16bf345a0a6d46cd98e56280ada](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/93`; scope `direct`.
+  - [rec_4f3a37b68261d424f0675aacbf57ce48f463bebb309634babd08d88d516957fb](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/53`; scope `direct`.
+  - [rec_5ebf9879ec19db2bd0643d5c0aa284177004bb879b59ce80bfda6d2744526282](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/9`; scope `direct`.
+  - [rec_7623e021493215723043c81e7026c51077ddeae6442981716ca6fcf4a6ec0cf1](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/71`; scope `direct`.
+  - [rec_85b96feccd1bbed32035f9b2037887710bd4fcd2a12116fc9ef9deb17440b194](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/8`; scope `direct`.
+  - [rec_8ff6ef7885464dc830c71e33084158d040dff929dec6d0822df706f40f9f89bd](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/67`; scope `direct`.
+  - [rec_e64b3d9b1d034c42f61ad47e356ce782b0430ba6dcd85ad5db24762013ccbadd](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/80`; scope `direct`.
+  - [rec_e7f5ab70254b656f22d31a42f777b34f33c05fc6513d429ec1e055ba7bed3eb9](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/98`; scope `direct`.
+  - [rec_ed6185ca0dd52081ea1c860a9b4f9dbcd4a0321e0668f45a8e2739fc939c0035](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/86`; scope `direct`.
+- **C002** — Captured Europe PMC literature records map NOD2 to the selected inflammatory bowel disease term (MONDO_0005265) and contain multiple distinct literature identifiers. Here, direct scope means an exact match to the selected disease term, not direct experimental proof.
+  - [rec_02e783bfc42b1b8cabb6417739ad755a5da169680279569e17b2aa03e8f4c95f](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/83`; scope `direct`.
+  - [rec_08a75328f56d7f3d932ad63ffbf175ee5df1b145d0e522ed20d20d9d6e258b5e](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/84`; scope `direct`.
+  - [rec_38470f82c89fe1416e59d6c2fc16b11c6e7e135cbb14ad5d0b376d10ef0e5ef1](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/15`; scope `direct`.
+  - [rec_3943c4a8dcbf938652da208a22f7eb6ca82391c3db95adfde91e6eaf4c820d41](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/30`; scope `direct`.
+  - [rec_48d66d5a7d897932053bf0f9c6f2751e50aed38fadf6dfbfa8ce2aafb23731f8](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/66`; scope `direct`.
+  - [rec_4bd3c82bdf026e9896c4684c5c79a0470d1a49dada8392db2c82686c2d6f4ff5](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/59`; scope `direct`.
+  - [rec_6ed3f25ad5c4ea4328c963810ea3d3a89b70f9156235a1565964661158fdfbcc](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/28`; scope `direct`.
+  - [rec_76e16c64d7def849d4a4e9b29c65e917c8f999605dbe066269c59ac5c1130b9c](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/89`; scope `direct`.
+  - [rec_977a36f5a97cd40e2d3344151730d2e725895209b98a722cf949f75c1b547a9f](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/60`; scope `direct`.
+  - [rec_9c4187d6a86f5def7247d6680fbb730b2d941af727865f2807cd33c2b6616fae](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/72`; scope `direct`.
+  - [rec_9d4674fc0c404f75c1588f59d7cd43d234b71eeb5328254e9cc84aa8aee99c36](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/55`; scope `direct`.
+  - [rec_a98a3285852b628af98786779c25b358d42eae0d77f294d54a68984a197cd8ff](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/21`; scope `direct`.
+  - [rec_adfa764e340d41cc58e83e371a324d4ac915535120be689ad877970a22f381a6](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/78`; scope `direct`.
+  - [rec_bb86c645c70e9c2b83ccad2d076c9642761f02215e6b416668da29a8a94d26af](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_2.json`, `/data/disease/evidences/rows/55`; scope `direct`.
+  - [rec_c7451905971e5df80a5f2df9c26d13dca1baa17d070121b002399d6c6aa5d6ca](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/77`; scope `direct`.
+  - [rec_d83efa6b3401b2812b2f452118c058c321949c8479ee5fdd9fb5e4bbefbc6b4d](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/82`; scope `direct`.
+  - [rec_f98da3f6ddc4a04c628e4afbe705fd6ddd2d11b36523d88b16bd031631490803](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/13`; scope `direct`.
+- **C003** — Direct gene burden evidence associates NOD2 loss-of-function variants with increased risk of inflammatory bowel disease (MONDO_0005265), with directionOnTarget LoF and directionOnTrait risk reported.
+  - [rec_c1dedaa82a1a9ba3dd958523199f9898565eeece83796013b54576c5c936080a](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005265) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/90`; scope `direct`.
+- **C004** — Two cited UniProt variant records annotate NOD2 variants rs2066845 and rs2066844 for inflammatory bowel disease 1 (MONDO_0009960), each with a source score of 1. This disease is a descendant of selected IBD, so these records are indirect for the selected IBD term.
+  - [rec_0da01ff9bcede7ede402e72a5a9c970c632e3f8c3269d1130ecd0d62d9cf6035](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0009960) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/35`; scope `descendant_of_selected`.
+  - [rec_b2945e2bd0e52639832aaff2ab3abc3f308ec2b0d5546a7bb5087fdd12ebe1fd](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0009960) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/27`; scope `descendant_of_selected`.
+- **C005** — EVA records report the NOD2 variant rs2066847 (ClinVar RCV002512781) as a loss-of-function allele associated with Crohn disease (MONDO_0005011, a descendant of IBD), with a score of 0.92 and directionOnTarget LoF.
+  - [rec_07385be644712cc74e6aa64554ef5c863048a2fe1931a5e1ca05579abb3faae8](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/62`; scope `descendant_of_selected`.
+- **C006** — The cited gene-burden records for Crohn disease (MONDO_0005011, a descendant of selected IBD) report NOD2 directionOnTarget LoF, directionOnTrait risk, and odds ratios ranging from approximately 1.91 to 2.93. These are source-field observations and indirect evidence for selected IBD, not independently verified causal conclusions.
+  - [rec_88c6798ade1f938f9fd127c8f9ac75146e2455f9a382145197eb98a8cccca3f5](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/32`; scope `descendant_of_selected`.
+  - [rec_94ce301929a12bd01bf7125b2393fff6c92cb2173494ac3fd9e77c98765d9e2c](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/50`; scope `descendant_of_selected`.
+  - [rec_a0b081a7350e673c83ae949b526d148dc8c1b24c456f83291986c52ce1185cac](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_1.json`, `/data/disease/evidences/rows/27`; scope `descendant_of_selected`.
+  - [rec_a24846e9448a6b80f62e50aba8962413d1b3c3aa8fc293a5eb077f3d502c333a](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/95`; scope `descendant_of_selected`.
+  - [rec_e04c1edd62e0ba7d64c46a63b3899b10342ea51160f77cbbc5803b26ae949b2e](https://platform.opentargets.org/evidence/ENSG00000167207/MONDO_0005011) — `nod2_evidence_0.json`, `/data/disease/evidences/rows/99`; scope `descendant_of_selected`.
+- **C007** — The NOD2 protein is annotated as a pattern recognition receptor (PRR) that senses muramyl dipeptide (MDP) from bacterial peptidoglycan and activates NF-kappa-B and MAP kinase signaling, playing an important role in gastrointestinal immunity according to the Open Targets function description.
+  - [rec_6ddb7dcf3ca00fa2d9471d1963d5e23d99377e2bf7bc5763a7119af92f684d95](https://platform.opentargets.org/target/ENSG00000167207) — `nod2_context.json`, `/data/target/functionDescriptions/0`; scope `target_context`.
+- **C008** — Open Targets tractability records for NOD2 (target-level, not IBD-specific) include an Approved Drug flag for the small molecule modality (value: true) and a High-Quality Ligand flag (value: true), while the Approved Drug flags for antibody and other modalities are false.
+  - [rec_fd5e8a81ae1e73785984109182e103738f1841fe94b63db7a46d0eb92720131e](https://platform.opentargets.org/target/ENSG00000167207) — `nod2_context.json`, `/data/target/tractability/0`; scope `target_context`.
+  - [rec_fa323c8f08dadf49913dab54619fb2a2ff7193b2ebd2373b9c1b621073428593](https://platform.opentargets.org/target/ENSG00000167207) — `nod2_context.json`, `/data/target/tractability/4`; scope `target_context`.
+  - [rec_1046d2df01ec15947a3d590a7b84b18bf5f5ed8d12fb9a263cb882799b0f8dcf](https://platform.opentargets.org/target/ENSG00000167207) — `nod2_context.json`, `/data/target/tractability/8`; scope `target_context`.
+  - [rec_18af38641df2eaf32c398ec395694d20e274d2f55dad0e8e535542577aa46ee7](https://platform.opentargets.org/target/ENSG00000167207) — `nod2_context.json`, `/data/target/tractability/25`; scope `target_context`.
+
+## Review status
+
+Host validation checks structure and reference contracts, not scientific entailment. Chris Lawrence, RN signed off on this corrected derivative and its disclosed coverage limits on 2026-09-22; review methods and prior confirmations are documented in review.md. No clinical recommendation or target ranking is made.

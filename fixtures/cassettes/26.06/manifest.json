@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "max_pages": 3,
+  "page_size": 100,
+  "release": {
+    "apiVersion": {
+      "x": "26",
+      "y": "6",
+      "z": "3"
+    },
+    "dataVersion": {
+      "year": "26",
+      "month": "06",
+      "iteration": null
+    }
+  },
+  "files": {
+    "entities.json": "2b32b4b8e292b7de2ff0c015019050908aa07bd28ef611e0120518b3e0528935",
+    "entities_after.json": "4f0338099ec757e7f530d043d1cc0d3392669ed38785b5930f804b6aa8eb1d1b",
+    "nod2_context.json": "63dd44ee456582eb44dbf1ee8480f785bfc8b20204feee9d743135f09de84ee3",
+    "nod2_evidence_0.json": "dcb8666821bb69935b344973805d07aac3bbb1420e09829e92ee3f7ef7672502",
+    "nod2_evidence_1.json": "e728ac8b2e7ba2f7639fef72a814faeac4fb4375dd9852e8cd3856029c9337ef",
+    "nod2_evidence_2.json": "050c708508207eb2577e08759e01909297363505919e668f1ba858aaafeb0f11",
+    "tnf_context.json": "bf23508ce68cfee213c69441920a0d2f30c9098ee981d835d5a5d154f14073fc",
+    "tnf_evidence_0.json": "eeb6c12c1c4b9c1b1bcb90e87cbadb4928eff433f4f6ac531b8b484696e606c3",
+    "tnf_evidence_1.json": "85d0f2746a1fd501c90737657657a56eea4af01d02b06e3a5688a635106a233d",
+    "tnf_evidence_2.json": "f278e5737140c190cc67f8d7a0ded85b02a8affccf1052471b4fabf0db568fd5"
+  }
+}

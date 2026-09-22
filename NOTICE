@@ -1,0 +1,10 @@
+Open Targets Evidence Invariants
+
+Original project code is provided under the Apache License, Version 2.0.
+
+This project uses public Open Targets Platform data. The Platform marks its data
+CC0 1.0. Source-specific provenance is retained in the frozen query responses and
+normalized records. See https://platform-docs.opentargets.org/licence and
+https://platform-docs.opentargets.org/citation for upstream guidance.
+
+No endorsement by Open Targets, Anthropic, or any data provider is implied.

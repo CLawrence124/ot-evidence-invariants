@@ -1,0 +1,36 @@
+{
+  "mode": "live",
+  "model_id": "claude-sonnet-4-6",
+  "target": "NOD2",
+  "disease": "IBD",
+  "limits": {
+    "max_tool_calls": 8,
+    "max_repairs": 2,
+    "max_turns": 12,
+    "timeout_seconds": 30,
+    "model_timeout_seconds": 180.0
+  },
+  "prompt_sha256": "22330beb46a1bc57125ee58c9123df7cf4bd5fe50d22364f3d857018dd182328",
+  "skill_sha256": "e895b4e058a51a9f6ab8b324d264b03dc8611d0e732a2634c18ee6fdec49a352",
+  "validator_version": "0.2.1-citation-repair-hints",
+  "renderer_version": "0.2-explicit-section-totals",
+  "dossier_schema_sha256": "9042d52fbf01b37a6a52e52861899fab0afb0cf6bd802add9c6dbda2c24b5a0a",
+  "provider_config": {
+    "provider": "anthropic",
+    "sdk_version": "1.7.0",
+    "model_id": "claude-sonnet-4-6",
+    "limits": {
+      "max_requests": 4,
+      "max_input_per_request": 80000,
+      "max_total_input": 200000,
+      "max_output_per_request": 4096,
+      "max_total_output": 12000
+    },
+    "projection": "lossless-v3",
+    "transport_prompt": "First call assemble_target_disease_evidence. Once evidence is\nreturned, native tool calls are disabled: submit your draft directly as ONLY a\nJSON object {\"kind\":\"final\",\"dossier\":...}. The host calls\nvalidate_dossier_references on that exact draft and sends any errors back for\nrepair. Do not request validation yourself or wait for another turn to finalize.\nDo not print tool actions as text. Return the final JSON\nmatching the supplied Dossier schema, without Markdown fences. Aim for 5–10 concise\nsource-grounded claims across the available evidence, not a target recommendation.\nPrefer short claims and few fully supported examples over long lists. Each claim\nmust concern one source disease; all citations for direct_evidence must be direct\ndisease evidence. Split direct IBD and descendant observations into separate claims.\nEvery claim's target_id and disease_id identify the requested pair: copy the\npacket target.id and disease_scope.selected.id, including in descendant claims.\nKeep the source disease in the prose and citations, not in the claim disease_id.\nCopy section_states exactly from each packet section's interpretation. Do not turn\nempty sections into factual claims with record citations; the renderer displays\ntheir limits and exact section metadata. Do not generate safety-empty, capture-count,\nor no-clinical-rows claims: these are covered in the host-rendered section summary.\nThe packet projection is lossless: projection.record_contexts[context_index]\nsupplies each record's kind, target_id, source_disease, disease_relation, and source.\nRead that context before interpreting a record's disease scope. Provenance metadata\nentries supply common provenance. For attributes, zip projection.present_columns\n[columns_index] with present_values (a positional array) to recover named values.\nother_states_index selects projection.attribute_state_layouts (missing-state groups).\nAll table indices are zero-based. Sections use\nrecord_indices into the records array instead of repeating long references. Every\nrecord remains included. An empty present array is still an empty array, not a\nnegative scientific conclusion. In the model-facing packet, record_ref is a short\nhandle such as R0000. Copy those handles into record_refs; the adapter resolves\nthem exactly to the original full IDs before host validation and saving. Handles\nare local to this packet, not new scientific identifiers. The output schema permits\nonly existing handles grouped by source disease. Do not copy or invent long hashes.\nA string upstream_id is a present source ID; missing upstream IDs retain their\ntyped missingness object. Citation handles and upstream source IDs are distinct.\nRespect budget feedback. Leave one tool call for mandatory host final validation.\n",
+    "validation_flow": "host-owned-after-assembly-v1",
+    "final_output_format": "packet-handles-single-disease-json-schema-v2",
+    "transport_prompt_sha256": "c07dc29e3a27e7526f4e71f394b55ffaf4e1786c8099c7a3c42e1befc74731af",
+    "automatic_retries": 0
+  }
+}

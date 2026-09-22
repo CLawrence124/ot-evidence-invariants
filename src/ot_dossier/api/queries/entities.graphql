@@ -1,0 +1,8 @@
+query Entities {
+  meta { apiVersion { x y z } dataVersion { year month iteration } }
+  legacy: disease(efoId: "EFO_0003767") { id name }
+  search(queryString: "inflammatory bowel disease", entityNames: ["disease"], page: {index: 0, size: 5}) { hits { id name entity } }
+  disease(efoId: "MONDO_0005265") { id name descendants }
+  nod2: target(ensemblId: "ENSG00000167207") { id approvedSymbol }
+  tnf: target(ensemblId: "ENSG00000232810") { id approvedSymbol }
+}

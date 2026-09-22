@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "mode": "live",
+  "model_id": "claude-sonnet-4-6",
+  "target": "NOD2",
+  "disease": "IBD",
+  "limits": {
+    "max_tool_calls": 8,
+    "max_repairs": 2,
+    "max_turns": 12,
+    "timeout_seconds": 30,
+    "model_timeout_seconds": 180.0
+  },
+  "prompt_sha256": "4e9587e07ab586b28e791db6340395e272453cab11f21617ae7ca26fb1520e53",
+  "skill_sha256": "680e6a77d203530421e48bca00464de6bb65c80e64254f48678aa039841f765e",
+  "dossier_schema_sha256": "9042d52fbf01b37a6a52e52861899fab0afb0cf6bd802add9c6dbda2c24b5a0a",
+  "provider_config": {
+    "provider": "anthropic",
+    "sdk_version": "1.7.0",
+    "model_id": "claude-sonnet-4-6",
+    "limits": {
+      "max_requests": 4,
+      "max_input_per_request": 80000,
+      "max_total_input": 200000,
+      "max_output_per_request": 4096,
+      "max_total_output": 12000
+    },
+    "projection": "lossless-v2",
+    "transport_prompt": "Use the two native tools, one call at a time. Do not print tool\nactions as text. When ready, return ONLY a JSON object {\"kind\":\"final\",\"dossier\":...}\nmatching the supplied Dossier schema, without Markdown fences. Aim for 5–10 concise\nsource-grounded claims across the available evidence, not a target recommendation.\nCopy section_states exactly from each packet section's interpretation. Do not turn\nempty sections into uncited factual claims; the renderer displays their limits.\nThe packet projection is lossless: projection.record_contexts[context_index]\nsupplies each record's kind, target_id, source_disease, disease_relation, and source.\nRead that context before interpreting a record's disease scope. Provenance metadata\nentries supply common provenance. For attributes, zip projection.present_columns\n[columns_index] with present_values (a positional array) to recover named values.\nother_states_index selects projection.attribute_state_layouts (missing-state groups).\nAll table indices are zero-based. Sections use\nrecord_indices into the records array instead of repeating long references. Every\nrecord remains included. An empty present array is still an empty array, not a\nnegative scientific conclusion. Use the original full record_ref for citations.\nRespect budget feedback. Leave one tool call for mandatory host final validation.\n",
+    "transport_prompt_sha256": "2ace675112d2811c8f6205c3f9785ba53bba626300d80fa589492ffe96716ce9",
+    "automatic_retries": 0
+  },
+  "packet_id": "packet_42151cbc97e89bc94e9812a821396b40ab21ec89f176cff98bb5e90c5f1277de",
+  "tool_calls": 3,
+  "repairs": 0,
+  "model_turns": 3,
+  "usage": {
+    "input_tokens": 144423,
+    "output_tokens": 5638
+  },
+  "usage_note": "Live API usage; input includes any reported cache tokens. See provider_usage for details.",
+  "scientific_review": "not_performed_for_this_output",
+  "provider_usage": {
+    "requests_sent": 3,
+    "input_tokens": 144423,
+    "output_tokens": 5638,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "resolved_model": "claude-sonnet-4-6",
+    "note": "Reported usage only; a timed-out request may still incur provider usage not returned here."
+  }
+}

@@ -1,0 +1,2733 @@
+{
+  "format_version": 1,
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-09-19T01:19:59.866322+00:00",
+  "request": {
+    "query": "query Evidence($disease: String!, $targets: [String!]!, $size: Int!, $cursor: String) {\n  disease(efoId: $disease) {\n    id\n    evidences(ensemblIds: $targets, enableIndirect: true, size: $size, cursor: $cursor) {\n      count cursor rows {\n        id datasourceId datatypeId score target { id } disease { id name }\n        diseaseFromSource diseaseFromSourceId diseaseFromSourceMappedId\n        literature urls { url } studyId variantRsId\n        directionOnTarget directionOnTrait beta oddsRatio\n        clinicalStage clinicalReportId\n        drug { id name mechanismsOfAction { rows { mechanismOfAction actionType targets { id } } } }\n      }\n    }\n  }\n}\n",
+    "variables": {
+      "disease": "MONDO_0005265",
+      "targets": [
+        "ENSG00000167207"
+      ],
+      "size": 100,
+      "cursor": "eyJpbmRleCI6Miwic2l6ZSI6MTAwfQ=="
+    }
+  },
+  "response": {
+    "data": {
+      "disease": {
+        "id": "MONDO_0005265",
+        "evidences": {
+          "count": 4003,
+          "cursor": "eyJpbmRleCI6Mywic2l6ZSI6MTAwfQ==",
+          "rows": [
+            {
+              "id": "02db4bd9585d6e64c1e58431fc3a015b8d83c923",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002557654",
+              "variantRsId": "rs2150814954",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0379ad35f049c30a963253289f985fec4e3fab3a",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001784657",
+              "variantRsId": "rs1292846110",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "039cb2185f584aa80156cac265c52da971a59629",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002528897",
+              "variantRsId": "rs199552944",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0428549bcfe35614ed92d7a3c117bc007070541a",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003780335",
+              "variantRsId": "rs753458507",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "047ad65a1245251ac25c534a64a5419a91415db6",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002553173",
+              "variantRsId": "rs1213629611",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "04ac5c6be069d39516c44c72973eed75212c1ae8",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003797905",
+              "variantRsId": "rs757653432",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "051283ed32cff3e1c2be0168c74c8dc38f096b08",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001781412",
+              "variantRsId": "rs104895469",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "05f5d28f7e6d301a57e5c0ac5adc2f2474d63c7e",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002563461",
+              "variantRsId": "rs1242042498",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "05f688a57490a600816b5e07e598488c5ebf20ec",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003136411",
+              "variantRsId": "rs375201229",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "06972c03abc470af9b7b93a6d23b3ba204a1427c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002552123",
+              "variantRsId": "rs1462834850",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "06c1dff2d2096317c7205fd5ef0f38d8646eae7d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001781436",
+              "variantRsId": "rs199475923",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "06da59920281df9373ceba41802eaaa76f241bab",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002851385",
+              "variantRsId": "rs748200640",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "06e21fd7365919ba5ddde1d1275b6e9606d6ef26",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001782792",
+              "variantRsId": "rs775281342",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "07e6364d99ef737f83dd0b9b4598e7632f1ac072",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002544896",
+              "variantRsId": "rs373185098",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0826c9b1b8f023926b009621a839d747034ee1b6",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002535503",
+              "variantRsId": "rs754270929",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "087bfd9f06dd98584aa1632f1ce5090ce82c50f4",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002542350",
+              "variantRsId": "rs62029861",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "095bf638fa13fbab7321447b89e901fddbd74a92",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003781351",
+              "variantRsId": "rs754538287",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "097124f6f9fdd3d31a734bb459c3550e1ea5200d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002551439",
+              "variantRsId": "rs1964571054",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "098cf74ab8a4f3047745de2329dd63c94fb9310b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002482579",
+              "variantRsId": "rs764176270",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "09cf26c90e558e27a1a891c9ab410887ba932ed4",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002539466",
+              "variantRsId": "rs776025574",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "09cffcc69bd5f4f8cd9e136552d8ee16c1cb8c6f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002564017",
+              "variantRsId": "rs1340958111",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0a05838e6f661fe75df409e8cf9630b06e4d2d9b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001782843",
+              "variantRsId": "rs886052049",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0a50a8c26361b5916373025cf002877f01d18d2c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002555831",
+              "variantRsId": "rs749605438",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0ac962203d1e7c9f4209cb8b9efcb54b1ba29d48",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002514470",
+              "variantRsId": "rs104895429",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0b0d55f4d990a248967e0bb7383e14c4a3a2a96d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002555411",
+              "variantRsId": "rs1963848568",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0be7e486b21c9a97089c2d7874e6e917ad1e37ca",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002545150",
+              "variantRsId": "rs542558237",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0daa8069862aec86d78e2aac50871181c8a269b0",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002592534",
+              "variantRsId": "rs375201229",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0de522392fd27fdd9e78724ae06c0cc669336430",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV006600053",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0e058154d5f4fff1df7c21ad0ad02fc791798a29",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002552894",
+              "variantRsId": "rs2150810483",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0e997f5b195e091a8e97327ee6a923186b22f684",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003104032",
+              "variantRsId": "rs775443143",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0ef7de0ff19a8f06d1f96915e596f821acc308e7",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005214826",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0f256e839f5e7d081254bac765ab87e0223768f0",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002755368",
+              "variantRsId": "rs769289791",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0f4c7b837dc3f0c200129a3fd19507278ac6eb16",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002514484",
+              "variantRsId": "rs104895457",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "0ff5985b0c6cf09bf70d331432b97a02f8c536ed",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002551475",
+              "variantRsId": "rs760678831",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "103e22783e41caf954de3563a4fe5f20a988d8b3",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [
+                "26174343"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "112d78304777644e8ecbc999065ec6a484412f4f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003782142",
+              "variantRsId": "rs1198315856",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "122d09acc21c550a2c3256816c2ca8f887783f6f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003799871",
+              "variantRsId": "rs2509134580",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "12b3b720a3cba497700831c570e1eb6b5b40f664",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002621468",
+              "variantRsId": "rs762053317",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "12e23bed80bd89b63ec8b38cae086bf9fdb50167",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005208695",
+              "variantRsId": "rs5743277",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "136c518797ae4af5e3e6ecd3e7795dcacd8ead16",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002751373",
+              "variantRsId": "rs764414933",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "136e435f2b3f91a041a7af2cb5d7874abe99ad73",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002552750",
+              "variantRsId": "rs369740939",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "13a3097095f934e610fd10cf3560007428c54334",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003810316",
+              "variantRsId": "rs35285618",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "13bcb47d5cb8a974aed6f72d103ae55dd4e7657a",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002546944",
+              "variantRsId": "rs764414933",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "148904623a6ad14164db55f952b3a75e06cd1c79",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002573487",
+              "variantRsId": "rs765335094",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "15571818e0070bfc3f1b7cefbc09108a612f9ff9",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002543469",
+              "variantRsId": "rs2150824449",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "15889f149e6b951a9e7f71dedbf9c636f58b8f15",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001784478",
+              "variantRsId": "rs749180535",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "15a5971d7c7b79abf773e0b92dcb7b1d65d6b5d5",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002534786",
+              "variantRsId": "rs777798807",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "15c6d9556d6d57c5167a215ae9adf0fe3b53a6cd",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002554248",
+              "variantRsId": "rs200428513",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1674453d6c6e8f4e3880a6b997acb32494c880db",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV006596076",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1678a56251c761f0b5bcf9038525330e574bd7e0",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV006592858",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "16d1375286a218d685726c4a0dd6650f999b65b7",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001280997",
+              "variantRsId": "rs114664276",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "171a25f61018c3dfa5e68df4347e6ac92f5fe5d2",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002561920",
+              "variantRsId": "rs908511039",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "176bc4ea4859e1a6ef234963cdf4a89521da9b4d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002554859",
+              "variantRsId": "rs771184127",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "17736f5606a27cddf810059210e0073672464115",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005214187",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "17a32713a6ab28d2fd01f4533c39c2d973833fc3",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002535634",
+              "variantRsId": "rs373550987",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "17a694c01b7928d8be5e2abdc918287a872e73ec",
+              "datasourceId": "europepmc",
+              "datatypeId": "literature",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005265",
+                "name": "inflammatory bowel disease"
+              },
+              "diseaseFromSource": null,
+              "diseaseFromSourceId": null,
+              "diseaseFromSourceMappedId": "MONDO_0005265",
+              "literature": [
+                "26167078"
+              ],
+              "urls": [],
+              "studyId": null,
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "17c5dbcd104b627b324b9aa848c6987e8c38e996",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002560633",
+              "variantRsId": "rs104895472",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "18fef09d48bb0cda44fc69b44a04f4df3522512c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV006600051",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "19a64f5b0e7119e70d1a4a33aa94e760343ab62e",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002513887",
+              "variantRsId": "rs104895455",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1b11aac5cf1139c660eb57f5ce71a5e389509b56",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003103979",
+              "variantRsId": "rs2150836993",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1beee1340495606fff1318e06e39d72c714edf00",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001782818",
+              "variantRsId": "rs5743275",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1c97467efe7a42b8f6b0e22b8a225c06d4236149",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003796273",
+              "variantRsId": "rs1164632643",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1d52abc80262a3744c421d21e1c4d2277a965c7c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002522867",
+              "variantRsId": "rs765335094",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1f16edd3072c594b34cfac3108c5117b263ac01c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002563939",
+              "variantRsId": "rs1178978578",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1f9f702d7311aeb9b4f4f6fd30694e2dffec64cc",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005214783",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1fbcbc2b7506b7e29c55cc7c7abf1b6c27aecd0f",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003015934",
+              "variantRsId": "rs2506505125",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "1fc47656b1f540d7681fd8278dd05e8aa0f6a2bd",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001062118",
+              "variantRsId": "rs768889214",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "203e5eac4fc56c11b7c44fa32964a076c91a53e6",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003107078",
+              "variantRsId": "rs866173388",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "210589b57de50c283f2812d918b60b1a15611e82",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003794252",
+              "variantRsId": "rs2509134390",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "21921e932a3553af214273fce87727fceddf0f6c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001784430",
+              "variantRsId": "rs2076754",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "23f32be137a786dba9df83ef9f0e5fb162dd506a",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV006591104",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "24175bd3259f23be8bccf2f5e6766094795dad1d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002545085",
+              "variantRsId": "rs1964506383",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "241ff0f2291d62766c72e6669eea7e34587d125c",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003095917",
+              "variantRsId": "rs759456303",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2498a89088406a296ab3e8770878e4190cfa2443",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002514477",
+              "variantRsId": "rs104895439",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "24c10dc07d30716d305b47524fdbdf19ea252c9d",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003064940",
+              "variantRsId": "rs778114969",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "24f661a44eff3c183eda2ca56a98e6947d89185e",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002536399",
+              "variantRsId": "rs772534917",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "26067bb383260df5e4180d57586718bef021dc26",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003794795",
+              "variantRsId": "rs950076475",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "26635b2f2af3533d5adf927e00570f8bbf6fdb02",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005209969",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "26a31a7ff99de1ab2691ace703c958fb2494fcd6",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002558169",
+              "variantRsId": "rs529640892",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "27186df1ff953f3257aa3aa3e4b2566e8dce82c0",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002820982",
+              "variantRsId": "rs2506421643",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "27484886a69ad02aa54af76890ae86a7b2a8ec76",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002536731",
+              "variantRsId": "rs761449474",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2807e9cc4418aed8e0bd082986698a621d4b70b7",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002548045",
+              "variantRsId": "rs1384904015",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "282b9dfa66855ff936eaa02d54ee551f5b1396fb",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003787932",
+              "variantRsId": "rs753779656",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2851e782510204ec64ce2074ba981bb6598912ef",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001782836",
+              "variantRsId": "rs147874812",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "296ecc70b6e8c7bf94d8e83384c56d1e8212d5ce",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002609233",
+              "variantRsId": "rs1964422521",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "29a651fb9116f76193f4b26d94ed17db635668ed",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002647250",
+              "variantRsId": "rs1434117118",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2a61f5c0a558868d366a6839f920ca4df59d7ae5",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002867771",
+              "variantRsId": "rs2509131346",
+              "directionOnTarget": "LoF",
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2b832db94c5abbe7fe817e7d29d028183cc1a8ba",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003028015",
+              "variantRsId": "rs104895489",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2bb4727f1c2a74bf3d64776b5c47e34a47050e76",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002547036",
+              "variantRsId": "rs1965389837",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2bbbd64475494c554694e5baaf6fba0edcca972b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001784530",
+              "variantRsId": "rs2066845",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2c0984c41d365186a2abab4b0adf8f2520fe8198",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV001782853",
+              "variantRsId": "rs751525993",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2c13e33e0e341a7151c2f77406e757c08008b590",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003807515",
+              "variantRsId": "rs2506427439",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2c8db373eecb6f749dc4566c780aefaa398d6374",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002571306",
+              "variantRsId": "rs1000799073",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2cebc42db8bbc089be255479301215ce74f0ab98",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV005214785",
+              "variantRsId": null,
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2d94e2a8f846852542df926fd7715ebdda9d6f87",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0009960",
+                "name": "inflammatory bowel disease 1"
+              },
+              "diseaseFromSource": "Inflammatory bowel disease 1",
+              "diseaseFromSourceId": "CN260071",
+              "diseaseFromSourceMappedId": "MONDO_0009960",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003224507",
+              "variantRsId": "rs142077546",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2df9ee6c5f258667bb080bc52f8ec05b00a7d1a7",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV003095916",
+              "variantRsId": "rs768930237",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2e6e8ad2f50f0c7ac72be071afb0f29f4ca08977",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002607400",
+              "variantRsId": "rs144827713",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2e82fb33a9d746f76e7c4a04d5f8f96efd006f8b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002552521",
+              "variantRsId": "rs772487940",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2eecb6e0b668fbcef28a7aed717de77ea99fb74b",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002545394",
+              "variantRsId": "rs753619374",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            },
+            {
+              "id": "2fe2532b6cb5b0d75a4f77bb7592eb99b87a8598",
+              "datasourceId": "eva",
+              "datatypeId": "genetic_association",
+              "score": 0.32,
+              "target": {
+                "id": "ENSG00000167207"
+              },
+              "disease": {
+                "id": "MONDO_0005011",
+                "name": "Crohn disease"
+              },
+              "diseaseFromSource": "Regional enteritis",
+              "diseaseFromSourceId": "C0678202",
+              "diseaseFromSourceMappedId": "MONDO_0005011",
+              "literature": [],
+              "urls": [],
+              "studyId": "RCV002555333",
+              "variantRsId": "rs1286052486",
+              "directionOnTarget": null,
+              "directionOnTrait": null,
+              "beta": null,
+              "oddsRatio": null,
+              "clinicalStage": null,
+              "clinicalReportId": null,
+              "drug": null
+            }
+          ]
+        }
+      }
+    }
+  }
+}

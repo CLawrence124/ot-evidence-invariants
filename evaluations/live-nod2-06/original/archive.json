@@ -1,0 +1,12 @@
+{
+  "source_directory": "generated/live-nod2-06",
+  "sha256": {
+    "result.json": "bbff05d17ef00511fc8f6e7fe03b61910977b0ff0fd97d9dc69c5d3fa4567037",
+    "packet.json": "78f594e8bf31dd45c9f51c6afb2277e158d92c97367e77270ac790befb4eacbb",
+    "run_config.json": "045f05e04483d2c778a42990f79133c00422299e40b574f58c9b60c7101d4425",
+    "validation.json": "54b1e1114f5f58a428fe3643d60039c40ca2559ea5495e231ada8b201959620d",
+    "dossier.json": "f98f62f29d66092825ee886c0e9fbf260848d3d7ae2e07e64db4637364cb250e",
+    "trace.jsonl": "903a2ff4be927641ace26b5625e2bdde34efcaffbe72e8a98afe303d48d8886e",
+    "dossier.md": "5b49c6c2b14247ef4917884f4d518e2dbdd6a916f230fbc49b2733d4c5bc7b50"
+  }
+}

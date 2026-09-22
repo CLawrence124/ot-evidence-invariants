@@ -1,0 +1,136 @@
+Open Targets Evidence Invariants — 2-Weekend Build Spec
+
+Cut-down from the full project plan. One disease, one target, two tools, no benchmark. Ships in ~20–24 hours.
+
+1. The thesis change (read this first)
+
+The full plan's thesis was: "does workflow-specific deterministic preprocessing beat the official Open Targets MCP server?" Answering that honestly requires the three-condition benchmark, six cases, three replicates, and specialist review — roughly 80–110 hours, and it can legitimately come back "no meaningful difference." You'd be spending your largest effort on your least certain result.
+
+The cut-down thesis is narrower and cannot come back equivocal:
+
+Some scientific invariants in target-evidence review cannot be guaranteed by prompting, because they are data invariants. Here they are, encoded as software, with tests that prove they hold and fault fixtures that prove the system fails loudly when they're violated.
+
+This keeps the entire intellectual core of the original plan — the deterministic/model/human boundary, provenance preservation, indication specificity, missingness ontology, citation validity vs. entailment — and drops only the comparative benchmark. The demonstration shifts from "my tools beat the baseline" (uncertain, expensive) to "here is a class of failure prompting can't fix, and here is the software contract that does" (certain, cheap, and a more interesting claim anyway).
+
+You lose the ability to say "custom tools win." You gain a project that ships, and a sharper engineering argument. Add the comparative benchmark later as v2 if you get an interview and want more to walk through.
+
+2. Scope: what's in, what's explicitly out
+
+In:
+
+Piece	Scope
+Disease	Inflammatory bowel disease (one)
+Target	NOD2 (one; TNF only if Weekend 2 runs early)
+MCP tools	Two: assemble_target_disease_evidence, validate_dossier_references
+Agent	One scripted loop producing one dossier
+Skill	One SKILL.md + one scientific-rules reference
+Tests	Unit tests on fixtures + MCP contract test + fault fixtures
+Reproducibility	Frozen raw GraphQL responses (cassettes)
+Output	CLI → Markdown dossier + JSON packet
+Deliberately out — and say so in the README, because naming your cuts reads as judgment, not omission:
+
+The three-condition benchmark, the six-case set, the held-out CAD cases, the three replicates
+The official-MCP comparator condition
+Karenina adapter
+Specialist review panel
+Candidate discovery, literature/RAG, additional data sources
+resolve_disease_scope and get_indication_specific_clinical_context as separate tools — their logic folds into the single assemble tool
+Streamable HTTP deployment, any web UI
+Human usefulness rubric
+The two tools that survive are the two that carry the thesis: one that preserves the invariants during retrieval, one that detects their violation in generated prose. Everything else was supporting apparatus for a benchmark you're no longer running.
+
+3. The invariants (the actual product)
+
+These four are the whole point. Each is a statement prompting cannot guarantee and software can.
+
+Ontology scope cannot be silently erased. Every evidence record carries disease_relation ∈ {direct, descendant_of_selected}. A descendant-disease record can never be rendered as direct evidence for IBD. (Open Targets' own docs use NOD2–IBD/Crohn's to illustrate exactly this distinction, which is why it's the right first case.)
+
+Clinical stage travels with its indication. drug + target + mechanism + indication + development_stage + source move as one unit. A drug's global maximum phase can never overwrite a disease-specific clinical record. "Approved" and "approved for the requested disease" are different propositions.
+
+Missingness is typed, never null. Four states: unknown (queried, no value established), not_assessed (not queried), unavailable (retrieval failed/partial), not_applicable. An empty safety result means "no curated records returned under this retrieval," never "the target is safe."
+
+Every claim cites a record that exists. The validator deterministically catches dangling references and entity mismatches. It does not judge whether the record scientifically entails the claim — that's citation entailment, and it stays a human problem. Keeping that line visible is the most credible thing in the project.
+
+4. Weekend 1 — reference case and service layer (~10–12 h)
+
+Session 1: manual reference case (4 h) — no code
+
+This session predates implementation on purpose, exactly as the full plan argued. It forces the schema to follow the science.
+
+Open the GraphiQL playground at https://api.platform.opentargets.org/api/v4/graphql/browser (endpoint: https://api.platform.opentargets.org/api/v4/graphql, POST only; currently serving data release 26.06). Record the release/API version you see.
+Resolve IBD and NOD2 identifiers by hand. Save to reference/ibd_nod2/entities.yaml.
+Run one target–disease evidence query and one target-annotation query. Save the raw JSON responses to disk— these become your cassettes, and you will not need the live API again this weekend.
+Inspect direct vs. descendant behavior in the actual records. Note what field tells you which. Write scope_notes.md— three paragraphs is enough.
+Write reference_facts.yaml: five verified facts and five prohibited inferences for IBD–NOD2.
+Exit criterion: you can state precisely what data object your tool will construct, and why handing raw GraphQL to a model risks losing scope, indication, or missingness.
+
+Session 2: packet schema and assembler (5–6 h)
+
+Pydantic models for EvidencePacket: source/retrieval metadata, target, disease scope, evidence records, clinical records, target context. Use the trimmed shape from the full plan, minus possible_overlap_group and resume_token (cut — they serve bulk retrieval you're not doing).
+evidence_assembler.py: fixtures in → normalized packet out. Tag disease_relation on every record. Compute retrieval status ∈ {complete, complete_empty, truncated, partial, failed}. Content-address record_ref by hashing a canonical serialization.
+Unit tests for the invariants:
+a direct record's source_disease_id equals selected_disease_ida descendant record cannot be emitted as directa truncated packet always carries a truncation reasoncomplete_empty cannot coexist with upstream errorsevery clinical record retains exactly one source indication
+Exit criterion: pytest green, no network calls in the test path, packet regenerates byte-identically from cassettes.
+
+5. Weekend 2 — MCP, agent, faults, ship (~10–12 h)
+
+Session 3: MCP wrapper and validator (4–5 h)
+
+mcp/server.py: FastMCP, thin. Two tools, domain parameters only — no graphql_query: str escape hatch. Declare output schemas so results come back as structured content rather than Markdown blobs. All real work stays in the service layer you already tested.
+validate_dossier_references: takes a packet_id handle plus the dossier JSON, returns findings. Four codes are enough:
+ERROR   DANGLING_REFERENCE      claim cites a record_ref absent from packetERROR   ENTITY_MISMATCH         cited record is for a different target/diseaseWARNING REQUIRED_SECTION_UNKNOWN  section has no value and no typed missingness stateWARNING INDIRECT_SCOPE          claim says "direct" but all cited records are descendants
+One MCP contract test: connect a client, list tools, call both, validate outputs against the declared schemas, confirm error semantics on a bad identifier.
+Session 4: agent, faults, README (5–6 h)
+
+agent/loop.py: explicit loop — load skill, connect client, send prompt + tools, execute requested calls, log each, validate final dossier, persist trace as JSONL. Fixed tool-call budget. Use one fixed Sonnet model.
+skill/SKILL.md + references/scientific-rules.md: the interpretation rules, compressed. Keep the ones that bite: association score is not probability of success; genetic association is not causal validation; genetic direction is not a pharmacological instruction; propagated evidence stays indirect; approval is indication-specific; absent safety data is not safety; tractability is not disease efficacy; baseline expression is not disease mechanism; record count is not independent replication; absence claims require complete_empty.
+Fault fixtures — synthetic, no API needed, and the highest-signal thing in the repo:
+Injected condition	Required behavior
+Approval record for an unrelated indication	"approved in another indication," never "approved for IBD"
+All safety records removed	"no curated safety records returned," never "appears safe"
+Evidence record from a descendant disease only	marked indirect; INDIRECT_SCOPE fires if prose says direct
+A claim citing a nonexistent record_ref	DANGLING_REFERENCE fires
+README: lead with the invariants and one worked before/after example, then the fault-fixture results table, then architecture, then "what I deliberately didn't build and why."
+Exit criterion: fresh clone runs pytest green with zero network access, and cli.py --target NOD2 --disease IBD produces a dossier from cassettes.
+
+6. Repo structure (trimmed)
+
+ot-evidence-invariants/
+├── README.md
+├── pyproject.toml / uv.lock
+├── src/ot_dossier/
+│   ├── api/graphql_client.py
+│   ├── api/queries/{evidence,clinical,target_context}.graphql
+│   ├── domain/{models,evidence_assembler,dossier_validator}.py
+│   ├── mcp/server.py
+│   ├── agent/loop.py
+│   └── cli.py
+├── skill/SKILL.md + references/scientific-rules.md
+├── reference/ibd_nod2/{entities,reference_facts}.yaml + scope_notes.md
+├── fixtures/{cassettes,fault_cases}/
+├── tests/{unit,contract}/
+└── docs/{architecture,limitations}.md
+Gone from the original tree: benchmark/, snapshots/manifests/, tests/{integration,live}/, domain/{disease_scope,clinical_context}.py(folded), most of docs/.
+
+7. Stack notes and corrections
+
+Verify every version pin at build time. The source plan states FastMCP 4.0.3 is current stable; that appears to conflate the separate fastmcp-remote package with the main fastmcp package, which looks to be on 2.14.x. Run uv lock and let the lockfile — not any plan document — be authoritative. Note that FastMCP <2.14.0 permitted MCP SDK versions vulnerable to CVE-2025-66416, so don't pin below 2.14.
+Python 3.12, uv, fastmcp, anthropic, pydantic, an HTTP client. That's the whole dependency set.
+stdio / in-process transport only. No HTTP deployment.
+Strip the citeturn... markers from the source plan before any of it goes into a README or a doc. They're another tool's citation artifacts and render as garbage.
+Open Targets data is CC0; their code is Apache-2.0. License yours Apache-2.0, attribute Open Targets, and redistribute only the normalized fields your fixtures need.
+8. How to present it
+
+README opening: "Open Targets released an official MCP server in January 2026, built with Anthropic as part of their Claude for Healthcare & Life Sciences launch. I didn't rebuild it. I asked a narrower question: which scientific invariants in target-evidence review can't be guaranteed by prompting, and what does it take to encode them in software?"
+
+That opening is strong because it's verifiably true and it shows you studied Anthropic's actual life-sciences ecosystem rather than picking a generic bio API.
+
+Application sentence: "Built an MCP server and agent skill for Open Targets target-evidence review that encodes four scientific invariants — ontology scope, indication-specific clinical status, typed missingness, and citation validity — as deterministic software contracts, with fault-injection tests proving the system fails loudly rather than silently overstating evidence."
+
+Interview line worth rehearsing: why the validator checks citation validity but refuses to judge citation entailment. That single boundary demonstrates you know which problems belong to code, which to the model, and which to a human expert — which is the judgment the role is actually screening for.
+
+9. If you finish early
+
+In priority order: add TNF as a second target (cheap, shows the packet generalizes) → add the no-validator ablation(one flag, answers a real engineering question: does the deterministic validator measurably reduce structural and citation failures?) → then consider the official-MCP comparator.
+
+Do not start the six-case benchmark until everything above is public and green.

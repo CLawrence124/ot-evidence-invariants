@@ -1,0 +1,5 @@
+{
+  "valid": true,
+  "findings": [],
+  "scope": "Checks structured assertions and reference membership, not scientific entailment or arbitrary prose."
+}

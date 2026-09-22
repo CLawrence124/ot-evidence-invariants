@@ -1,0 +1,339 @@
+{
+  "format_version": 1,
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-09-19T01:20:00.053166+00:00",
+  "request": {
+    "query": "query Context($target: String!) {\n  target(ensemblId: $target) {\n    id approvedSymbol\n    functionDescriptions\n    tractability { label modality value }\n    safetyLiabilities {\n      datasource event eventId url literature\n      effects { direction dosing }\n      biosamples { tissueLabel tissueId cellLabel cellId cellFormat }\n      studies { name type description }\n    }\n  }\n}\n",
+    "variables": {
+      "target": "ENSG00000232810"
+    }
+  },
+  "response": {
+    "data": {
+      "target": {
+        "id": "ENSG00000232810",
+        "approvedSymbol": "TNF",
+        "functionDescriptions": [
+          "Cytokine that binds to TNFRSF1A/TNFR1 and TNFRSF1B/TNFBR. It is mainly secreted by macrophages and can induce cell death of certain tumor cell lines. It is potent pyrogen causing fever by direct action or by stimulation of interleukin-1 secretion and is implicated in the induction of cachexia, Under certain conditions it can stimulate cell proliferation and induce cell differentiation. Impairs regulatory T- cells (Treg) function in individuals with rheumatoid arthritis via FOXP3 dephosphorylation. Up-regulates the expression of protein phosphatase 1 (PP1), which dephosphorylates the key 'Ser-418' residue of FOXP3, thereby inactivating FOXP3 and rendering Treg cells functionally defective (PubMed:23396208). Key mediator of cell death in the anticancer action of BCG-stimulated neutrophils in combination with DIABLO/SMAC mimetic in the RT4v6 bladder cancer cell line (PubMed:16829952, PubMed:22517918, PubMed:23396208). Induces insulin resistance in adipocytes via inhibition of insulin-induced IRS1 tyrosine phosphorylation and insulin-induced glucose uptake. Induces GKAP42 protein degradation in adipocytes which is partially responsible for TNF-induced insulin resistance (By similarity). Plays a role in angiogenesis by inducing VEGF production synergistically with IL1B and IL6 (PubMed:12794819). Promotes osteoclastogenesis and therefore mediates bone resorption (By similarity). {ECO:0000250|UniProtKB:P06804, ECO:0000269|PubMed:12794819, ECO:0000269|PubMed:16829952, ECO:0000269|PubMed:22517918, ECO:0000269|PubMed:23396208}.",
+          "The TNF intracellular domain (ICD) form induces IL12 production in dendritic cells. ."
+        ],
+        "tractability": [
+          {
+            "label": "Approved Drug",
+            "modality": "SM",
+            "value": false
+          },
+          {
+            "label": "Advanced Clinical",
+            "modality": "SM",
+            "value": false
+          },
+          {
+            "label": "Phase 1 Clinical",
+            "modality": "SM",
+            "value": false
+          },
+          {
+            "label": "Structure with Ligand",
+            "modality": "SM",
+            "value": true
+          },
+          {
+            "label": "High-Quality Ligand",
+            "modality": "SM",
+            "value": true
+          },
+          {
+            "label": "High-Quality Pocket",
+            "modality": "SM",
+            "value": true
+          },
+          {
+            "label": "Med-Quality Pocket",
+            "modality": "SM",
+            "value": false
+          },
+          {
+            "label": "Druggable Family",
+            "modality": "SM",
+            "value": true
+          },
+          {
+            "label": "Approved Drug",
+            "modality": "AB",
+            "value": true
+          },
+          {
+            "label": "Advanced Clinical",
+            "modality": "AB",
+            "value": false
+          },
+          {
+            "label": "Phase 1 Clinical",
+            "modality": "AB",
+            "value": false
+          },
+          {
+            "label": "UniProt loc high conf",
+            "modality": "AB",
+            "value": true
+          },
+          {
+            "label": "GO CC high conf",
+            "modality": "AB",
+            "value": true
+          },
+          {
+            "label": "UniProt loc med conf",
+            "modality": "AB",
+            "value": true
+          },
+          {
+            "label": "UniProt SigP or TMHMM",
+            "modality": "AB",
+            "value": true
+          },
+          {
+            "label": "GO CC med conf",
+            "modality": "AB",
+            "value": false
+          },
+          {
+            "label": "Human Protein Atlas loc",
+            "modality": "AB",
+            "value": false
+          },
+          {
+            "label": "Approved Drug",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Advanced Clinical",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Phase 1 Clinical",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Literature",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "UniProt Ubiquitination",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Database Ubiquitination",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Half-life Data",
+            "modality": "PR",
+            "value": false
+          },
+          {
+            "label": "Small Molecule Binder",
+            "modality": "PR",
+            "value": true
+          },
+          {
+            "label": "Approved Drug",
+            "modality": "OC",
+            "value": true
+          },
+          {
+            "label": "Advanced Clinical",
+            "modality": "OC",
+            "value": false
+          },
+          {
+            "label": "Phase 1 Clinical",
+            "modality": "OC",
+            "value": false
+          }
+        ],
+        "safetyLiabilities": [
+          {
+            "datasource": "ClinPGx",
+            "event": "hand-foot syndrome",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "sorafenib induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "hypersensitivity",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "abacavir induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31579012_T_C,C, 6_31579012_T_T,T, 6_31579012_T_C,T"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "thrombocytopenia",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "gemcitabine induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              },
+              {
+                "name": "carboplatin induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "Toxic liver disease",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "pyrazinamide induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              },
+              {
+                "name": "ethambutol induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              },
+              {
+                "name": "isoniazid induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              },
+              {
+                "name": "rifampin induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G, 6_31575254_G_A,G, 6_31575254_G_A,A"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "insufficient data",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "carbamazepine induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_A,G"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "chance of severe hypersensitivity",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "carbamazepine induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_G,G"
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "chance of severe hypersensitivity to carbamazepine treatment",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "carbamazepine induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31575254_G_A,A"
+              }
+            ]
+          },
+          {
+            "datasource": "ToxCast",
+            "event": "regulation of gene expression",
+            "eventId": "",
+            "url": "https://www.epa.gov/chemical-research/exploring-toxcast-data-downloadable-data",
+            "literature": null,
+            "effects": [],
+            "biosamples": [
+              {
+                "tissueLabel": null,
+                "tissueId": null,
+                "cellLabel": "umbilical vein endothelium and peripheral blood mononuclear cells",
+                "cellId": null,
+                "cellFormat": "primary cell co-culture"
+              }
+            ],
+            "studies": [
+              {
+                "name": "BSK_LPS_TNFa_down",
+                "type": "cell-based",
+                "description": "BSK_LPS_TNFa, is one of 11 assay component(s) measured or calculated from the BSK_LPS assay. It is designed to make measurements of enzyme-linked immunosorbent assay, a form of binding reporter, as detected with fluorescence intensity signals by Enzyme-linked immunosorbent assay technology."
+              }
+            ]
+          },
+          {
+            "datasource": "ClinPGx",
+            "event": "neuropathy",
+            "eventId": "",
+            "url": "https://www.clinpgx.org/search?query=ENSG00000232810",
+            "literature": null,
+            "effects": [],
+            "biosamples": [],
+            "studies": [
+              {
+                "name": "stavudine induced effect",
+                "type": "clinical",
+                "description": "Genetic variation linked to this safety liability: 6_31574531_T_C,C, 6_31574531_T_C,T, 6_31574531_T_T,T"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

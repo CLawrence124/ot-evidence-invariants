@@ -1,0 +1,12 @@
+{
+  "source_directory": "generated/application-tnf-smoke-01",
+  "sha256": {
+    "result.json": "d593ab822808807a4efb317343c890c8bb95af1482141f18f6d0885739a6b929",
+    "packet.json": "59437388af290cc165ea5a00d2a27776084ce2851c2684160faa23c476241064",
+    "run_config.json": "c1b09e62b23b352b475515bdd1d683a2c7853921aaa3f313535ea9057666bf78",
+    "validation.json": "54b1e1114f5f58a428fe3643d60039c40ca2559ea5495e231ada8b201959620d",
+    "dossier.json": "bbb263b966406c285c54588bdac44f2deb774a8bb0e0c898d0630f2c4527e083",
+    "trace.jsonl": "b3ba9818c2485aef26cb51b95a94fbdfe9cd290354a9f2b4b65264f258045e79",
+    "dossier.md": "e5f93b6a74b118f0aeb980c5b9d836fefc9c3bf872063f6ea8b8a8973c55a3a4"
+  }
+}

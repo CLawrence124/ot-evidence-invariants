@@ -1,0 +1,15 @@
+query Evidence($disease: String!, $targets: [String!]!, $size: Int!, $cursor: String) {
+  disease(efoId: $disease) {
+    id
+    evidences(ensemblIds: $targets, enableIndirect: true, size: $size, cursor: $cursor) {
+      count cursor rows {
+        id datasourceId datatypeId score target { id } disease { id name }
+        diseaseFromSource diseaseFromSourceId diseaseFromSourceMappedId
+        literature urls { url } studyId variantRsId
+        directionOnTarget directionOnTrait beta oddsRatio
+        clinicalStage clinicalReportId
+        drug { id name mechanismsOfAction { rows { mechanismOfAction actionType targets { id } } } }
+      }
+    }
+  }
+}

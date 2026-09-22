@@ -1,0 +1,20 @@
+{
+  "selected_disease": {
+    "id": "MONDO_0005265",
+    "name": "inflammatory bowel disease"
+  },
+  "target": {
+    "id": "ENSG00000167207",
+    "symbol": "NOD2"
+  },
+  "second_target": {
+    "id": "ENSG00000232810",
+    "symbol": "TNF"
+  },
+  "legacy_id_observation": {
+    "id": "EFO_0003767",
+    "response": null
+  },
+  "source": "fixtures/cassettes/26.06/entities.json",
+  "human_verification": "pending"
+}

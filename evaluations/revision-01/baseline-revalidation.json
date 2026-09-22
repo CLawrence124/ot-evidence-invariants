@@ -1,0 +1,29 @@
+{
+  "baseline": "generated/live-nod2-02",
+  "validator_version": "0.2-single-disease-claims",
+  "note": "Read-only revalidation under revised contracts; original run and signed review are unchanged. This is not a new live-model evaluation.",
+  "validation": {
+    "valid": false,
+    "findings": [
+      {
+        "code": "MIXED_DISEASE_SCOPE",
+        "severity": "ERROR",
+        "claim_id": "claim-04",
+        "message": "Split source diseases into separate claims; each claim may cite only one source disease"
+      },
+      {
+        "code": "INDIRECT_SCOPE",
+        "severity": "ERROR",
+        "claim_id": "claim-04",
+        "message": "Every citation in a direct-evidence claim must be direct disease evidence; split descendant or target-context observations into separate claims"
+      },
+      {
+        "code": "MIXED_DISEASE_SCOPE",
+        "severity": "ERROR",
+        "claim_id": "claim-09",
+        "message": "Split source diseases into separate claims; each claim may cite only one source disease"
+      }
+    ],
+    "scope": "Checks structured assertions and reference membership, not scientific entailment or arbitrary prose."
+  }
+}

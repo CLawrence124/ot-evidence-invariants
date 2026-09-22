@@ -1,0 +1,109 @@
+{
+  "format_version": 1,
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "retrieved_at": "2026-09-19T01:19:57.753426+00:00",
+  "request": {
+    "query": "query Entities {\n  meta { apiVersion { x y z } dataVersion { year month iteration } }\n  legacy: disease(efoId: \"EFO_0003767\") { id name }\n  search(queryString: \"inflammatory bowel disease\", entityNames: [\"disease\"], page: {index: 0, size: 5}) { hits { id name entity } }\n  disease(efoId: \"MONDO_0005265\") { id name descendants }\n  nod2: target(ensemblId: \"ENSG00000167207\") { id approvedSymbol }\n  tnf: target(ensemblId: \"ENSG00000232810\") { id approvedSymbol }\n}\n",
+    "variables": {}
+  },
+  "response": {
+    "data": {
+      "meta": {
+        "apiVersion": {
+          "x": "26",
+          "y": "6",
+          "z": "3"
+        },
+        "dataVersion": {
+          "year": "26",
+          "month": "06",
+          "iteration": null
+        }
+      },
+      "legacy": null,
+      "search": {
+        "hits": [
+          {
+            "id": "MONDO_0005265",
+            "name": "inflammatory bowel disease",
+            "entity": "disease"
+          },
+          {
+            "id": "HP_0002037",
+            "name": "Inflammation of the large intestine",
+            "entity": "disease"
+          },
+          {
+            "id": "MONDO_0009960",
+            "name": "inflammatory bowel disease 1",
+            "entity": "disease"
+          },
+          {
+            "id": "MONDO_0011661",
+            "name": "inflammatory bowel disease 5",
+            "entity": "disease"
+          },
+          {
+            "id": "MONDO_0016542",
+            "name": "IL10-related early-onset inflammatory bowel disease",
+            "entity": "disease"
+          }
+        ]
+      },
+      "disease": {
+        "id": "MONDO_0005265",
+        "name": "inflammatory bowel disease",
+        "descendants": [
+          "MONDO_0005011",
+          "MONDO_0005292",
+          "MONDO_0005538",
+          "MONDO_0007005",
+          "MONDO_0009960",
+          "MONDO_0011661",
+          "MONDO_0012610",
+          "MONDO_0012831",
+          "MONDO_0012832",
+          "MONDO_0012840",
+          "MONDO_0012845",
+          "MONDO_0016542",
+          "MONDO_0017411",
+          "MONDO_0030314",
+          "MONDO_0033643",
+          "MONDO_0054849",
+          "Orphanet_238569",
+          "MONDO_0000701",
+          "MONDO_0000702",
+          "MONDO_0005101",
+          "MONDO_0005532",
+          "MONDO_0005534",
+          "MONDO_0005535",
+          "MONDO_0005537",
+          "MONDO_0005539",
+          "MONDO_0006038",
+          "MONDO_0006039",
+          "MONDO_0012941",
+          "MONDO_0014481",
+          "MONDO_0022901",
+          "MONDO_0024278",
+          "MONDO_0000703",
+          "MONDO_0000704",
+          "MONDO_0000709",
+          "MONDO_0000710",
+          "MONDO_0005533",
+          "MONDO_0005536",
+          "MONDO_0021207",
+          "MONDO_0021736",
+          "MONDO_0000708"
+        ]
+      },
+      "nod2": {
+        "id": "ENSG00000167207",
+        "approvedSymbol": "NOD2"
+      },
+      "tnf": {
+        "id": "ENSG00000232810",
+        "approvedSymbol": "TNF"
+      }
+    }
+  }
+}
