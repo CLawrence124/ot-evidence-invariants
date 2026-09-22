@@ -19,4 +19,4 @@ I built a narrow target-dossier agent around public Open Targets data to explore
 
 ## Share with the application
 
-Use the repository README as the entry point, with the evaluation summary and short demo. Add the actual repository link after publishing; this document does not imply that a public URL already exists. No new provider run is needed. Do not claim production readiness, validated target selection, or autonomous discovery.
+Use the repository README as the entry point, with the evaluation summary and short demo. Repository: [CLawrence124/ot-evidence-invariants](https://github.com/CLawrence124/ot-evidence-invariants). No new provider run is needed. Do not claim production readiness, validated target selection, or autonomous discovery.

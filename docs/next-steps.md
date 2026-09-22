@@ -4,7 +4,7 @@ NOD2 live synthesis, review, and a separately corrected dossier are complete; th
 
 ## Immediate application handoff
 
-Use README.md, application-notes.md, and demo.md. The shareable evidence is archived under evaluations/ rather than only in ignored generated/. The repository has not been published by this task; add its public link when available. Applications need not wait for another live run.
+Use README.md, application-notes.md, and demo.md. The shareable evidence is archived under evaluations/ rather than only in ignored generated/. The [public repository](https://github.com/CLawrence124/ot-evidence-invariants) is published. Its [first hosted test run](https://github.com/CLawrence124/ot-evidence-invariants/actions/runs/35782007765) passed all 84 tests on GitHub's Linux runner. Applications need not wait for another live run.
 
 Source-review metadata is reconciled; its exact historical date remains unknown, with no changes to expected source values.
 

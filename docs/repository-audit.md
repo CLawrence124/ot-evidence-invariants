@@ -41,3 +41,7 @@ Live TNF scientific evaluation, independent publication/specialist review, deplo
 ## Upload handoff
 
 Use the project files selected by Git's ignore rules, or the separately prepared clean ZIP. Do not drag the entire local folder into a browser upload: it also contains local environments and generated work intentionally excluded from publication. No commits or remote repository were created by this audit. After publishing, inspect the rendered README and let GitHub Actions run; add the actual repository URL to the application materials.
+
+## Post-publication verification — September 22, 2026
+
+The [public repository](https://github.com/CLawrence124/ot-evidence-invariants) is now published. Its initial full-source commit, `f59e3a25bc8a21900a1f3f7f4aa4c842b1b27bf6`, has the exact audited Git tree `b074b1b5a25b6af76c59507b3c7238a935672828`. The [first hosted workflow](https://github.com/CLawrence124/ot-evidence-invariants/actions/runs/35782007765) successfully installed dependencies, checked dependency consistency, and passed **84 tests in 65.27 seconds** on GitHub's Linux runner. Earlier statements in this report describe the pre-upload audit. This publication-status update changes documentation only; code and signed review artifacts are unchanged.
